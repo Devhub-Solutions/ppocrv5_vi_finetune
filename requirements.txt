@@ -1,0 +1,23 @@
+# Vietnamese OCR Toolkit - Requirements
+# ====================================
+# Cài đặt: pip install -r requirements.txt
+# Lưu ý: Nên dùng Python 3.10-3.12, tạo venv trước khi cài
+
+# Core OCR
+paddlepaddle==3.0.0
+paddleocr==2.9.1
+
+# Image processing
+Pillow>=10.0.0
+opencv-python-headless>=4.8.0
+numpy>=1.24.0,<2.0.0
+
+# HTTP / API
+requests>=2.31.0
+
+# Training utilities (cho finetune)
+pyyaml>=6.0
+visualdl>=2.5.0  # PaddlePaddle training visualization
+
+# Data processing
+tqdm>=4.65.0
