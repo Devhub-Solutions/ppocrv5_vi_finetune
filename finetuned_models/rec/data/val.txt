@@ -1,0 +1,9 @@
+/home/ubuntu/ppocrv5_vi_finetune/dataset_output/images/im0004_box_010.png	HÃY
+/home/ubuntu/ppocrv5_vi_finetune/dataset_output/images/im0002_box_013.png	AN
+/home/ubuntu/ppocrv5_vi_finetune/dataset_output/images/im0004_box_000.png	EM
+/home/ubuntu/ppocrv5_vi_finetune/dataset_output/images/im0004_box_009.png	NGĂN
+/home/ubuntu/ppocrv5_vi_finetune/dataset_output/images/im0002_box_008.png	lại
+/home/ubuntu/ppocrv5_vi_finetune/dataset_output/images/im0004_box_003.png	PHỤ
+/home/ubuntu/ppocrv5_vi_finetune/dataset_output/images/im0002_box_000.png	Ch
+/home/ubuntu/ppocrv5_vi_finetune/dataset_output/images/im0002_box_000.png	Ch
+/home/ubuntu/ppocrv5_vi_finetune/dataset_output/images/im0005_box_035.png	1-P

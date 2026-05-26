@@ -1,0 +1,27 @@
+{
+  "im0001.jpg": {
+    "processed_at": "2026-05-26 07:48:49",
+    "boxes_found": 2,
+    "boxes_saved": 1,
+    "details": [
+      {
+        "box_idx": 0,
+        "crop_file": "im0001_box_000.png",
+        "text": "Một loài chim quý hiếm, chỉ có ở các vùng núi cao.",
+        "confidence": 0.95
+      }
+    ]
+  },
+  "im0002.jpg": {
+    "processed_at": "2026-05-26 07:58:41",
+    "boxes_saved": 7
+  },
+  "im0003.jpg": {
+    "processed_at": "2026-05-26 07:59:16",
+    "boxes_saved": 0
+  },
+  "im0004.jpg": {
+    "processed_at": "2026-05-26 08:00:06",
+    "boxes_saved": 11
+  }
+}

@@ -1,0 +1,1067 @@
+[2026/05/26 07:53:27] ppocr WARNING: You are using VisualDL, the VisualDL is deprecated and removed in ppocr!
+[2026/05/26 07:53:27] ppocr INFO: Architecture : 
+[2026/05/26 07:53:27] ppocr INFO:     Backbone : 
+[2026/05/26 07:53:27] ppocr INFO:         name : PPLCNetV2
+[2026/05/26 07:53:27] ppocr INFO:         scale : 0.5
+[2026/05/26 07:53:27] ppocr INFO:     Head : 
+[2026/05/26 07:53:27] ppocr INFO:         fc_decay : 2e-05
+[2026/05/26 07:53:27] ppocr INFO:         name : CTCHead
+[2026/05/26 07:53:27] ppocr INFO:     Transform : None
+[2026/05/26 07:53:27] ppocr INFO:     algorithm : SVTR_LCNet
+[2026/05/26 07:53:27] ppocr INFO:     model_type : rec
+[2026/05/26 07:53:27] ppocr INFO: Eval : 
+[2026/05/26 07:53:27] ppocr INFO:     dataset : 
+[2026/05/26 07:53:27] ppocr INFO:         data_dir : ./
+[2026/05/26 07:53:27] ppocr INFO:         label_file_list : ['/home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/data/val.txt']
+[2026/05/26 07:53:27] ppocr INFO:         name : SimpleDataSet
+[2026/05/26 07:53:27] ppocr INFO:         transforms : 
+[2026/05/26 07:53:27] ppocr INFO:             DecodeImage : 
+[2026/05/26 07:53:27] ppocr INFO:                 channel_first : False
+[2026/05/26 07:53:27] ppocr INFO:                 img_mode : BGR
+[2026/05/26 07:53:27] ppocr INFO:             CTCLabelEncode : None
+[2026/05/26 07:53:27] ppocr INFO:             RecResizeImg : 
+[2026/05/26 07:53:27] ppocr INFO:                 image_shape : [3, 48, 320]
+[2026/05/26 07:53:27] ppocr INFO:             KeepKeys : 
+[2026/05/26 07:53:27] ppocr INFO:                 keep_keys : ['image', 'label', 'length']
+[2026/05/26 07:53:27] ppocr INFO:     loader : 
+[2026/05/26 07:53:27] ppocr INFO:         batch_size_per_card : 16
+[2026/05/26 07:53:27] ppocr INFO:         drop_last : False
+[2026/05/26 07:53:27] ppocr INFO:         num_workers : 2
+[2026/05/26 07:53:27] ppocr INFO:         shuffle : False
+[2026/05/26 07:53:27] ppocr INFO: Global : 
+[2026/05/26 07:53:27] ppocr INFO:     cal_metric_during_train : True
+[2026/05/26 07:53:27] ppocr INFO:     character_dict_path : /home/ubuntu/ppocrv5_vi_finetune/vietnamese_dict.txt
+[2026/05/26 07:53:27] ppocr INFO:     checkpoints : None
+[2026/05/26 07:53:27] ppocr INFO:     debug : False
+[2026/05/26 07:53:27] ppocr INFO:     distributed : False
+[2026/05/26 07:53:27] ppocr INFO:     epoch_num : 2
+[2026/05/26 07:53:27] ppocr INFO:     eval_batch_step : [0, 8]
+[2026/05/26 07:53:27] ppocr INFO:     infer_img : None
+[2026/05/26 07:53:27] ppocr INFO:     infer_mode : False
+[2026/05/26 07:53:27] ppocr INFO:     log_smooth_window : 20
+[2026/05/26 07:53:27] ppocr INFO:     max_text_length : 50
+[2026/05/26 07:53:27] ppocr INFO:     pretrained_model : None
+[2026/05/26 07:53:27] ppocr INFO:     print_batch_step : 10
+[2026/05/26 07:53:27] ppocr INFO:     save_epoch_step : 10
+[2026/05/26 07:53:27] ppocr INFO:     save_inference_dir : /home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/rec_inference
+[2026/05/26 07:53:27] ppocr INFO:     save_model_dir : /home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/rec_model
+[2026/05/26 07:53:27] ppocr INFO:     use_gpu : False
+[2026/05/26 07:53:27] ppocr INFO:     use_space_char : True
+[2026/05/26 07:53:27] ppocr INFO:     use_visualdl : True
+[2026/05/26 07:53:27] ppocr INFO: Loss : 
+[2026/05/26 07:53:27] ppocr INFO:     name : CTCLoss
+[2026/05/26 07:53:27] ppocr INFO: Metric : 
+[2026/05/26 07:53:27] ppocr INFO:     is_filter : True
+[2026/05/26 07:53:27] ppocr INFO:     main_indicator : acc
+[2026/05/26 07:53:27] ppocr INFO:     name : RecMetric
+[2026/05/26 07:53:27] ppocr INFO: Optimizer : 
+[2026/05/26 07:53:27] ppocr INFO:     beta1 : 0.9
+[2026/05/26 07:53:27] ppocr INFO:     beta2 : 0.999
+[2026/05/26 07:53:27] ppocr INFO:     lr : 
+[2026/05/26 07:53:27] ppocr INFO:         learning_rate : 0.0005
+[2026/05/26 07:53:27] ppocr INFO:     name : Adam
+[2026/05/26 07:53:27] ppocr INFO:     regularizer : 
+[2026/05/26 07:53:27] ppocr INFO:         factor : 2e-05
+[2026/05/26 07:53:27] ppocr INFO:         name : L2
+[2026/05/26 07:53:27] ppocr INFO: PostProcess : 
+[2026/05/26 07:53:27] ppocr INFO:     character_dict_path : /home/ubuntu/ppocrv5_vi_finetune/vietnamese_dict.txt
+[2026/05/26 07:53:27] ppocr INFO:     name : CTCLabelDecode
+[2026/05/26 07:53:27] ppocr INFO: Train : 
+[2026/05/26 07:53:27] ppocr INFO:     dataset : 
+[2026/05/26 07:53:27] ppocr INFO:         data_dir : ./
+[2026/05/26 07:53:27] ppocr INFO:         label_file_list : ['/home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/data/train.txt']
+[2026/05/26 07:53:27] ppocr INFO:         name : SimpleDataSet
+[2026/05/26 07:53:27] ppocr INFO:         transforms : 
+[2026/05/26 07:53:27] ppocr INFO:             DecodeImage : 
+[2026/05/26 07:53:27] ppocr INFO:                 channel_first : False
+[2026/05/26 07:53:27] ppocr INFO:                 img_mode : BGR
+[2026/05/26 07:53:27] ppocr INFO:             CTCLabelEncode : None
+[2026/05/26 07:53:27] ppocr INFO:             RecResizeImg : 
+[2026/05/26 07:53:27] ppocr INFO:                 image_shape : [3, 48, 320]
+[2026/05/26 07:53:27] ppocr INFO:             KeepKeys : 
+[2026/05/26 07:53:27] ppocr INFO:                 keep_keys : ['image', 'label', 'length']
+[2026/05/26 07:53:27] ppocr INFO:     loader : 
+[2026/05/26 07:53:27] ppocr INFO:         batch_size_per_card : 16
+[2026/05/26 07:53:27] ppocr INFO:         drop_last : True
+[2026/05/26 07:53:27] ppocr INFO:         num_workers : 4
+[2026/05/26 07:53:27] ppocr INFO:         shuffle : True
+[2026/05/26 07:53:27] ppocr INFO: profiler_options : None
+[2026/05/26 07:53:27] ppocr INFO: train with paddle 3.3.1 and device Place(cpu)
+[2026/05/26 07:53:27] ppocr INFO: Initialize indexes of datasets:['/home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/data/train.txt']
+[2026/05/26 07:53:27] ppocr ERROR: No Images in train dataset, please ensure
+	1. The images num in the train label_file_list should be larger than or equal with batch size.
+	2. The annotation file and path in the configuration file are provided normally.
+[2026/05/26 07:57:31] ppocr WARNING: You are using VisualDL, the VisualDL is deprecated and removed in ppocr!
+[2026/05/26 07:57:31] ppocr INFO: Architecture : 
+[2026/05/26 07:57:31] ppocr INFO:     Backbone : 
+[2026/05/26 07:57:31] ppocr INFO:         name : PPLCNetV2
+[2026/05/26 07:57:31] ppocr INFO:         scale : 0.5
+[2026/05/26 07:57:31] ppocr INFO:     Head : 
+[2026/05/26 07:57:31] ppocr INFO:         fc_decay : 2e-05
+[2026/05/26 07:57:31] ppocr INFO:         name : CTCHead
+[2026/05/26 07:57:31] ppocr INFO:     Transform : None
+[2026/05/26 07:57:31] ppocr INFO:     algorithm : SVTR_LCNet
+[2026/05/26 07:57:31] ppocr INFO:     model_type : rec
+[2026/05/26 07:57:31] ppocr INFO: Eval : 
+[2026/05/26 07:57:31] ppocr INFO:     dataset : 
+[2026/05/26 07:57:31] ppocr INFO:         data_dir : ./
+[2026/05/26 07:57:31] ppocr INFO:         label_file_list : ['/home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/data/val.txt']
+[2026/05/26 07:57:31] ppocr INFO:         name : SimpleDataSet
+[2026/05/26 07:57:31] ppocr INFO:         transforms : 
+[2026/05/26 07:57:31] ppocr INFO:             DecodeImage : 
+[2026/05/26 07:57:31] ppocr INFO:                 channel_first : False
+[2026/05/26 07:57:31] ppocr INFO:                 img_mode : BGR
+[2026/05/26 07:57:31] ppocr INFO:             CTCLabelEncode : None
+[2026/05/26 07:57:31] ppocr INFO:             RecResizeImg : 
+[2026/05/26 07:57:31] ppocr INFO:                 image_shape : [3, 48, 320]
+[2026/05/26 07:57:31] ppocr INFO:             KeepKeys : 
+[2026/05/26 07:57:31] ppocr INFO:                 keep_keys : ['image', 'label', 'length']
+[2026/05/26 07:57:31] ppocr INFO:     loader : 
+[2026/05/26 07:57:31] ppocr INFO:         batch_size_per_card : 16
+[2026/05/26 07:57:31] ppocr INFO:         drop_last : False
+[2026/05/26 07:57:31] ppocr INFO:         num_workers : 2
+[2026/05/26 07:57:31] ppocr INFO:         shuffle : False
+[2026/05/26 07:57:31] ppocr INFO: Global : 
+[2026/05/26 07:57:31] ppocr INFO:     cal_metric_during_train : True
+[2026/05/26 07:57:31] ppocr INFO:     character_dict_path : /home/ubuntu/ppocrv5_vi_finetune/vietnamese_dict.txt
+[2026/05/26 07:57:31] ppocr INFO:     checkpoints : None
+[2026/05/26 07:57:31] ppocr INFO:     debug : False
+[2026/05/26 07:57:31] ppocr INFO:     distributed : False
+[2026/05/26 07:57:31] ppocr INFO:     epoch_num : 2
+[2026/05/26 07:57:31] ppocr INFO:     eval_batch_step : [0, 8]
+[2026/05/26 07:57:31] ppocr INFO:     infer_img : None
+[2026/05/26 07:57:31] ppocr INFO:     infer_mode : False
+[2026/05/26 07:57:31] ppocr INFO:     log_smooth_window : 20
+[2026/05/26 07:57:31] ppocr INFO:     max_text_length : 50
+[2026/05/26 07:57:31] ppocr INFO:     pretrained_model : None
+[2026/05/26 07:57:31] ppocr INFO:     print_batch_step : 10
+[2026/05/26 07:57:31] ppocr INFO:     save_epoch_step : 10
+[2026/05/26 07:57:31] ppocr INFO:     save_inference_dir : /home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/rec_inference
+[2026/05/26 07:57:31] ppocr INFO:     save_model_dir : /home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/rec_model
+[2026/05/26 07:57:31] ppocr INFO:     use_gpu : False
+[2026/05/26 07:57:31] ppocr INFO:     use_space_char : True
+[2026/05/26 07:57:31] ppocr INFO:     use_visualdl : True
+[2026/05/26 07:57:31] ppocr INFO: Loss : 
+[2026/05/26 07:57:31] ppocr INFO:     name : CTCLoss
+[2026/05/26 07:57:31] ppocr INFO: Metric : 
+[2026/05/26 07:57:31] ppocr INFO:     is_filter : True
+[2026/05/26 07:57:31] ppocr INFO:     main_indicator : acc
+[2026/05/26 07:57:31] ppocr INFO:     name : RecMetric
+[2026/05/26 07:57:31] ppocr INFO: Optimizer : 
+[2026/05/26 07:57:31] ppocr INFO:     beta1 : 0.9
+[2026/05/26 07:57:31] ppocr INFO:     beta2 : 0.999
+[2026/05/26 07:57:31] ppocr INFO:     lr : 
+[2026/05/26 07:57:31] ppocr INFO:         learning_rate : 0.0005
+[2026/05/26 07:57:31] ppocr INFO:     name : Adam
+[2026/05/26 07:57:31] ppocr INFO:     regularizer : 
+[2026/05/26 07:57:31] ppocr INFO:         factor : 2e-05
+[2026/05/26 07:57:31] ppocr INFO:         name : L2
+[2026/05/26 07:57:31] ppocr INFO: PostProcess : 
+[2026/05/26 07:57:31] ppocr INFO:     character_dict_path : /home/ubuntu/ppocrv5_vi_finetune/vietnamese_dict.txt
+[2026/05/26 07:57:31] ppocr INFO:     name : CTCLabelDecode
+[2026/05/26 07:57:31] ppocr INFO: Train : 
+[2026/05/26 07:57:31] ppocr INFO:     dataset : 
+[2026/05/26 07:57:31] ppocr INFO:         data_dir : ./
+[2026/05/26 07:57:31] ppocr INFO:         label_file_list : ['/home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/data/train.txt']
+[2026/05/26 07:57:31] ppocr INFO:         name : SimpleDataSet
+[2026/05/26 07:57:31] ppocr INFO:         transforms : 
+[2026/05/26 07:57:31] ppocr INFO:             DecodeImage : 
+[2026/05/26 07:57:31] ppocr INFO:                 channel_first : False
+[2026/05/26 07:57:31] ppocr INFO:                 img_mode : BGR
+[2026/05/26 07:57:31] ppocr INFO:             CTCLabelEncode : None
+[2026/05/26 07:57:31] ppocr INFO:             RecResizeImg : 
+[2026/05/26 07:57:31] ppocr INFO:                 image_shape : [3, 48, 320]
+[2026/05/26 07:57:31] ppocr INFO:             KeepKeys : 
+[2026/05/26 07:57:31] ppocr INFO:                 keep_keys : ['image', 'label', 'length']
+[2026/05/26 07:57:31] ppocr INFO:     loader : 
+[2026/05/26 07:57:31] ppocr INFO:         batch_size_per_card : 16
+[2026/05/26 07:57:31] ppocr INFO:         drop_last : True
+[2026/05/26 07:57:31] ppocr INFO:         num_workers : 4
+[2026/05/26 07:57:31] ppocr INFO:         shuffle : True
+[2026/05/26 07:57:31] ppocr INFO: profiler_options : None
+[2026/05/26 07:57:31] ppocr INFO: train with paddle 3.3.1 and device Place(cpu)
+[2026/05/26 07:57:31] ppocr INFO: Initialize indexes of datasets:['/home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/data/train.txt']
+[2026/05/26 07:57:31] ppocr INFO: Initialize indexes of datasets:['/home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/data/val.txt']
+[2026/05/26 07:57:55] ppocr WARNING: You are using VisualDL, the VisualDL is deprecated and removed in ppocr!
+[2026/05/26 07:57:55] ppocr INFO: Architecture : 
+[2026/05/26 07:57:55] ppocr INFO:     Backbone : 
+[2026/05/26 07:57:55] ppocr INFO:         name : PPLCNetV3
+[2026/05/26 07:57:55] ppocr INFO:         scale : 0.5
+[2026/05/26 07:57:55] ppocr INFO:     Head : 
+[2026/05/26 07:57:55] ppocr INFO:         fc_decay : 2e-05
+[2026/05/26 07:57:55] ppocr INFO:         name : CTCHead
+[2026/05/26 07:57:55] ppocr INFO:     Transform : None
+[2026/05/26 07:57:55] ppocr INFO:     algorithm : SVTR_LCNet
+[2026/05/26 07:57:55] ppocr INFO:     model_type : rec
+[2026/05/26 07:57:55] ppocr INFO: Eval : 
+[2026/05/26 07:57:55] ppocr INFO:     dataset : 
+[2026/05/26 07:57:55] ppocr INFO:         data_dir : ./
+[2026/05/26 07:57:55] ppocr INFO:         label_file_list : ['/home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/data/val.txt']
+[2026/05/26 07:57:55] ppocr INFO:         name : SimpleDataSet
+[2026/05/26 07:57:55] ppocr INFO:         transforms : 
+[2026/05/26 07:57:55] ppocr INFO:             DecodeImage : 
+[2026/05/26 07:57:55] ppocr INFO:                 channel_first : False
+[2026/05/26 07:57:55] ppocr INFO:                 img_mode : BGR
+[2026/05/26 07:57:55] ppocr INFO:             CTCLabelEncode : None
+[2026/05/26 07:57:55] ppocr INFO:             RecResizeImg : 
+[2026/05/26 07:57:55] ppocr INFO:                 image_shape : [3, 48, 320]
+[2026/05/26 07:57:55] ppocr INFO:             KeepKeys : 
+[2026/05/26 07:57:55] ppocr INFO:                 keep_keys : ['image', 'label', 'length']
+[2026/05/26 07:57:55] ppocr INFO:     loader : 
+[2026/05/26 07:57:55] ppocr INFO:         batch_size_per_card : 16
+[2026/05/26 07:57:55] ppocr INFO:         drop_last : False
+[2026/05/26 07:57:55] ppocr INFO:         num_workers : 2
+[2026/05/26 07:57:55] ppocr INFO:         shuffle : False
+[2026/05/26 07:57:55] ppocr INFO: Global : 
+[2026/05/26 07:57:55] ppocr INFO:     cal_metric_during_train : True
+[2026/05/26 07:57:55] ppocr INFO:     character_dict_path : /home/ubuntu/ppocrv5_vi_finetune/vietnamese_dict.txt
+[2026/05/26 07:57:55] ppocr INFO:     checkpoints : None
+[2026/05/26 07:57:55] ppocr INFO:     debug : False
+[2026/05/26 07:57:55] ppocr INFO:     distributed : False
+[2026/05/26 07:57:55] ppocr INFO:     epoch_num : 2
+[2026/05/26 07:57:55] ppocr INFO:     eval_batch_step : [0, 8]
+[2026/05/26 07:57:55] ppocr INFO:     infer_img : None
+[2026/05/26 07:57:55] ppocr INFO:     infer_mode : False
+[2026/05/26 07:57:55] ppocr INFO:     log_smooth_window : 20
+[2026/05/26 07:57:55] ppocr INFO:     max_text_length : 50
+[2026/05/26 07:57:55] ppocr INFO:     pretrained_model : None
+[2026/05/26 07:57:55] ppocr INFO:     print_batch_step : 10
+[2026/05/26 07:57:55] ppocr INFO:     save_epoch_step : 10
+[2026/05/26 07:57:55] ppocr INFO:     save_inference_dir : /home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/rec_inference
+[2026/05/26 07:57:55] ppocr INFO:     save_model_dir : /home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/rec_model
+[2026/05/26 07:57:55] ppocr INFO:     use_gpu : False
+[2026/05/26 07:57:55] ppocr INFO:     use_space_char : True
+[2026/05/26 07:57:55] ppocr INFO:     use_visualdl : True
+[2026/05/26 07:57:55] ppocr INFO: Loss : 
+[2026/05/26 07:57:55] ppocr INFO:     name : CTCLoss
+[2026/05/26 07:57:55] ppocr INFO: Metric : 
+[2026/05/26 07:57:55] ppocr INFO:     is_filter : True
+[2026/05/26 07:57:55] ppocr INFO:     main_indicator : acc
+[2026/05/26 07:57:55] ppocr INFO:     name : RecMetric
+[2026/05/26 07:57:55] ppocr INFO: Optimizer : 
+[2026/05/26 07:57:55] ppocr INFO:     beta1 : 0.9
+[2026/05/26 07:57:55] ppocr INFO:     beta2 : 0.999
+[2026/05/26 07:57:55] ppocr INFO:     lr : 
+[2026/05/26 07:57:55] ppocr INFO:         learning_rate : 0.0005
+[2026/05/26 07:57:55] ppocr INFO:     name : Adam
+[2026/05/26 07:57:55] ppocr INFO:     regularizer : 
+[2026/05/26 07:57:55] ppocr INFO:         factor : 2e-05
+[2026/05/26 07:57:55] ppocr INFO:         name : L2
+[2026/05/26 07:57:55] ppocr INFO: PostProcess : 
+[2026/05/26 07:57:55] ppocr INFO:     character_dict_path : /home/ubuntu/ppocrv5_vi_finetune/vietnamese_dict.txt
+[2026/05/26 07:57:55] ppocr INFO:     name : CTCLabelDecode
+[2026/05/26 07:57:55] ppocr INFO: Train : 
+[2026/05/26 07:57:55] ppocr INFO:     dataset : 
+[2026/05/26 07:57:55] ppocr INFO:         data_dir : ./
+[2026/05/26 07:57:55] ppocr INFO:         label_file_list : ['/home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/data/train.txt']
+[2026/05/26 07:57:55] ppocr INFO:         name : SimpleDataSet
+[2026/05/26 07:57:55] ppocr INFO:         transforms : 
+[2026/05/26 07:57:55] ppocr INFO:             DecodeImage : 
+[2026/05/26 07:57:55] ppocr INFO:                 channel_first : False
+[2026/05/26 07:57:55] ppocr INFO:                 img_mode : BGR
+[2026/05/26 07:57:55] ppocr INFO:             CTCLabelEncode : None
+[2026/05/26 07:57:55] ppocr INFO:             RecResizeImg : 
+[2026/05/26 07:57:55] ppocr INFO:                 image_shape : [3, 48, 320]
+[2026/05/26 07:57:55] ppocr INFO:             KeepKeys : 
+[2026/05/26 07:57:55] ppocr INFO:                 keep_keys : ['image', 'label', 'length']
+[2026/05/26 07:57:55] ppocr INFO:     loader : 
+[2026/05/26 07:57:55] ppocr INFO:         batch_size_per_card : 16
+[2026/05/26 07:57:55] ppocr INFO:         drop_last : True
+[2026/05/26 07:57:55] ppocr INFO:         num_workers : 4
+[2026/05/26 07:57:55] ppocr INFO:         shuffle : True
+[2026/05/26 07:57:55] ppocr INFO: profiler_options : None
+[2026/05/26 07:57:55] ppocr INFO: train with paddle 3.3.1 and device Place(cpu)
+[2026/05/26 07:57:55] ppocr INFO: Initialize indexes of datasets:['/home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/data/train.txt']
+[2026/05/26 07:57:55] ppocr INFO: Initialize indexes of datasets:['/home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/data/val.txt']
+[2026/05/26 07:57:55] ppocr INFO: train dataloader has 2 iters
+[2026/05/26 07:57:55] ppocr INFO: valid dataloader has 1 iters
+[2026/05/26 07:57:55] ppocr INFO: train from scratch
+[2026/05/26 07:57:55] ppocr INFO: During the training process, after the 0th iteration, an evaluation is run every 8 iterations
+[2026/05/26 08:07:08] ppocr WARNING: You are using VisualDL, the VisualDL is deprecated and removed in ppocr!
+[2026/05/26 08:07:08] ppocr INFO: Architecture : 
+[2026/05/26 08:07:08] ppocr INFO:     Backbone : 
+[2026/05/26 08:07:08] ppocr INFO:         name : PPLCNetV2
+[2026/05/26 08:07:08] ppocr INFO:         scale : 0.5
+[2026/05/26 08:07:08] ppocr INFO:         use_ca : True
+[2026/05/26 08:07:08] ppocr INFO:         use_mimic : False
+[2026/05/26 08:07:08] ppocr INFO:     Head : 
+[2026/05/26 08:07:08] ppocr INFO:         head_list : 
+[2026/05/26 08:07:08] ppocr INFO:             CTCHead : 
+[2026/05/26 08:07:08] ppocr INFO:                 Neck : 
+[2026/05/26 08:07:08] ppocr INFO:                     depth : 2
+[2026/05/26 08:07:08] ppocr INFO:                     dims : 64
+[2026/05/26 08:07:08] ppocr INFO:                     hidden_dims : 120
+[2026/05/26 08:07:08] ppocr INFO:                     name : svtr
+[2026/05/26 08:07:08] ppocr INFO:                     use_guide : True
+[2026/05/26 08:07:08] ppocr INFO:                 Query : 
+[2026/05/26 08:07:08] ppocr INFO:                     depth : 2
+[2026/05/26 08:07:08] ppocr INFO:                     dims : 64
+[2026/05/26 08:07:08] ppocr INFO:                     hidden_dims : 120
+[2026/05/26 08:07:08] ppocr INFO:                     name : svtr
+[2026/05/26 08:07:08] ppocr INFO:                     use_guide : True
+[2026/05/26 08:07:08] ppocr INFO:                 fc_decay : 1e-05
+[2026/05/26 08:07:08] ppocr INFO:             SARHead : 
+[2026/05/26 08:07:08] ppocr INFO:                 enc_dim : 512
+[2026/05/26 08:07:08] ppocr INFO:                 max_text_length : 50
+[2026/05/26 08:07:08] ppocr INFO:         name : MultiHead
+[2026/05/26 08:07:08] ppocr INFO:     Transform : None
+[2026/05/26 08:07:08] ppocr INFO:     algorithm : SVTR_LCNet
+[2026/05/26 08:07:08] ppocr INFO:     model_type : rec
+[2026/05/26 08:07:08] ppocr INFO: Eval : 
+[2026/05/26 08:07:08] ppocr INFO:     dataset : 
+[2026/05/26 08:07:08] ppocr INFO:         data_dir : ./
+[2026/05/26 08:07:08] ppocr INFO:         label_file_list : ['/home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/data/val.txt']
+[2026/05/26 08:07:08] ppocr INFO:         name : SimpleDataSet
+[2026/05/26 08:07:08] ppocr INFO:         transforms : 
+[2026/05/26 08:07:08] ppocr INFO:             DecodeImage : 
+[2026/05/26 08:07:08] ppocr INFO:                 channel_first : False
+[2026/05/26 08:07:08] ppocr INFO:                 img_mode : BGR
+[2026/05/26 08:07:08] ppocr INFO:             CTCLabelEncode : None
+[2026/05/26 08:07:08] ppocr INFO:             RecResizeImg : 
+[2026/05/26 08:07:08] ppocr INFO:                 image_shape : [3, 48, 320]
+[2026/05/26 08:07:08] ppocr INFO:             KeepKeys : 
+[2026/05/26 08:07:08] ppocr INFO:                 keep_keys : ['image', 'label', 'length']
+[2026/05/26 08:07:08] ppocr INFO:     loader : 
+[2026/05/26 08:07:08] ppocr INFO:         batch_size_per_card : 16
+[2026/05/26 08:07:08] ppocr INFO:         drop_last : False
+[2026/05/26 08:07:08] ppocr INFO:         num_workers : 2
+[2026/05/26 08:07:08] ppocr INFO:         shuffle : False
+[2026/05/26 08:07:08] ppocr INFO: Global : 
+[2026/05/26 08:07:08] ppocr INFO:     cal_metric_during_train : True
+[2026/05/26 08:07:08] ppocr INFO:     character_dict_path : /home/ubuntu/ppocrv5_vi_finetune/vietnamese_dict.txt
+[2026/05/26 08:07:08] ppocr INFO:     checkpoints : None
+[2026/05/26 08:07:08] ppocr INFO:     debug : False
+[2026/05/26 08:07:08] ppocr INFO:     distributed : False
+[2026/05/26 08:07:08] ppocr INFO:     epoch_num : 2
+[2026/05/26 08:07:08] ppocr INFO:     eval_batch_step : [0, 8]
+[2026/05/26 08:07:08] ppocr INFO:     infer_img : None
+[2026/05/26 08:07:08] ppocr INFO:     infer_mode : False
+[2026/05/26 08:07:08] ppocr INFO:     log_smooth_window : 20
+[2026/05/26 08:07:08] ppocr INFO:     max_text_length : 50
+[2026/05/26 08:07:08] ppocr INFO:     pretrained_model : None
+[2026/05/26 08:07:08] ppocr INFO:     print_batch_step : 10
+[2026/05/26 08:07:08] ppocr INFO:     save_epoch_step : 10
+[2026/05/26 08:07:08] ppocr INFO:     save_inference_dir : /home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/rec_inference
+[2026/05/26 08:07:08] ppocr INFO:     save_model_dir : /home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/rec_model
+[2026/05/26 08:07:08] ppocr INFO:     use_gpu : False
+[2026/05/26 08:07:08] ppocr INFO:     use_space_char : True
+[2026/05/26 08:07:08] ppocr INFO:     use_visualdl : True
+[2026/05/26 08:07:08] ppocr INFO: Loss : 
+[2026/05/26 08:07:08] ppocr INFO:     loss_config_list : 
+[2026/05/26 08:07:08] ppocr INFO:         CTCLoss : None
+[2026/05/26 08:07:08] ppocr INFO:         SARLoss : None
+[2026/05/26 08:07:08] ppocr INFO:     name : MultiLoss
+[2026/05/26 08:07:08] ppocr INFO: Metric : 
+[2026/05/26 08:07:08] ppocr INFO:     is_filter : True
+[2026/05/26 08:07:08] ppocr INFO:     main_indicator : acc
+[2026/05/26 08:07:08] ppocr INFO:     name : RecMetric
+[2026/05/26 08:07:08] ppocr INFO: Optimizer : 
+[2026/05/26 08:07:08] ppocr INFO:     beta1 : 0.9
+[2026/05/26 08:07:08] ppocr INFO:     beta2 : 0.999
+[2026/05/26 08:07:08] ppocr INFO:     lr : 
+[2026/05/26 08:07:08] ppocr INFO:         learning_rate : 0.0005
+[2026/05/26 08:07:08] ppocr INFO:     name : Adam
+[2026/05/26 08:07:08] ppocr INFO:     regularizer : 
+[2026/05/26 08:07:08] ppocr INFO:         factor : 2e-05
+[2026/05/26 08:07:08] ppocr INFO:         name : L2
+[2026/05/26 08:07:08] ppocr INFO: PostProcess : 
+[2026/05/26 08:07:08] ppocr INFO:     character_dict_path : /home/ubuntu/ppocrv5_vi_finetune/vietnamese_dict.txt
+[2026/05/26 08:07:08] ppocr INFO:     name : CTCLabelDecode
+[2026/05/26 08:07:08] ppocr INFO:     use_space_char : True
+[2026/05/26 08:07:08] ppocr INFO: Train : 
+[2026/05/26 08:07:08] ppocr INFO:     dataset : 
+[2026/05/26 08:07:08] ppocr INFO:         data_dir : ./
+[2026/05/26 08:07:08] ppocr INFO:         label_file_list : ['/home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/data/train.txt']
+[2026/05/26 08:07:08] ppocr INFO:         name : SimpleDataSet
+[2026/05/26 08:07:08] ppocr INFO:         transforms : 
+[2026/05/26 08:07:08] ppocr INFO:             DecodeImage : 
+[2026/05/26 08:07:08] ppocr INFO:                 channel_first : False
+[2026/05/26 08:07:08] ppocr INFO:                 img_mode : BGR
+[2026/05/26 08:07:08] ppocr INFO:             CTCLabelEncode : None
+[2026/05/26 08:07:08] ppocr INFO:             RecResizeImg : 
+[2026/05/26 08:07:08] ppocr INFO:                 image_shape : [3, 48, 320]
+[2026/05/26 08:07:08] ppocr INFO:             KeepKeys : 
+[2026/05/26 08:07:08] ppocr INFO:                 keep_keys : ['image', 'label', 'length']
+[2026/05/26 08:07:08] ppocr INFO:     loader : 
+[2026/05/26 08:07:08] ppocr INFO:         batch_size_per_card : 16
+[2026/05/26 08:07:08] ppocr INFO:         drop_last : True
+[2026/05/26 08:07:08] ppocr INFO:         num_workers : 4
+[2026/05/26 08:07:08] ppocr INFO:         shuffle : True
+[2026/05/26 08:07:08] ppocr INFO: profiler_options : None
+[2026/05/26 08:07:08] ppocr INFO: train with paddle 3.3.1 and device Place(cpu)
+[2026/05/26 08:07:08] ppocr INFO: Initialize indexes of datasets:['/home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/data/train.txt']
+[2026/05/26 08:07:08] ppocr INFO: Initialize indexes of datasets:['/home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/data/val.txt']
+[2026/05/26 08:07:30] ppocr WARNING: You are using VisualDL, the VisualDL is deprecated and removed in ppocr!
+[2026/05/26 08:07:30] ppocr INFO: Architecture : 
+[2026/05/26 08:07:30] ppocr INFO:     Backbone : 
+[2026/05/26 08:07:30] ppocr INFO:         name : PPLCNetV3
+[2026/05/26 08:07:30] ppocr INFO:         scale : 0.5
+[2026/05/26 08:07:30] ppocr INFO:     Head : 
+[2026/05/26 08:07:30] ppocr INFO:         head_list : 
+[2026/05/26 08:07:30] ppocr INFO:             CTCHead : 
+[2026/05/26 08:07:30] ppocr INFO:                 Neck : 
+[2026/05/26 08:07:30] ppocr INFO:                     depth : 2
+[2026/05/26 08:07:30] ppocr INFO:                     dims : 64
+[2026/05/26 08:07:30] ppocr INFO:                     hidden_dims : 120
+[2026/05/26 08:07:30] ppocr INFO:                     name : svtr
+[2026/05/26 08:07:30] ppocr INFO:                     use_guide : True
+[2026/05/26 08:07:30] ppocr INFO:                 Query : 
+[2026/05/26 08:07:30] ppocr INFO:                     depth : 2
+[2026/05/26 08:07:30] ppocr INFO:                     dims : 64
+[2026/05/26 08:07:30] ppocr INFO:                     hidden_dims : 120
+[2026/05/26 08:07:30] ppocr INFO:                     name : svtr
+[2026/05/26 08:07:30] ppocr INFO:                     use_guide : True
+[2026/05/26 08:07:30] ppocr INFO:                 fc_decay : 1e-05
+[2026/05/26 08:07:30] ppocr INFO:             SARHead : 
+[2026/05/26 08:07:30] ppocr INFO:                 enc_dim : 512
+[2026/05/26 08:07:30] ppocr INFO:                 max_text_length : 50
+[2026/05/26 08:07:30] ppocr INFO:         name : MultiHead
+[2026/05/26 08:07:30] ppocr INFO:     Transform : None
+[2026/05/26 08:07:30] ppocr INFO:     algorithm : SVTR_LCNet
+[2026/05/26 08:07:30] ppocr INFO:     model_type : rec
+[2026/05/26 08:07:30] ppocr INFO: Eval : 
+[2026/05/26 08:07:30] ppocr INFO:     dataset : 
+[2026/05/26 08:07:30] ppocr INFO:         data_dir : ./
+[2026/05/26 08:07:30] ppocr INFO:         label_file_list : ['/home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/data/val.txt']
+[2026/05/26 08:07:30] ppocr INFO:         name : SimpleDataSet
+[2026/05/26 08:07:30] ppocr INFO:         transforms : 
+[2026/05/26 08:07:30] ppocr INFO:             DecodeImage : 
+[2026/05/26 08:07:30] ppocr INFO:                 channel_first : False
+[2026/05/26 08:07:30] ppocr INFO:                 img_mode : BGR
+[2026/05/26 08:07:30] ppocr INFO:             CTCLabelEncode : None
+[2026/05/26 08:07:30] ppocr INFO:             RecResizeImg : 
+[2026/05/26 08:07:30] ppocr INFO:                 image_shape : [3, 48, 320]
+[2026/05/26 08:07:30] ppocr INFO:             KeepKeys : 
+[2026/05/26 08:07:30] ppocr INFO:                 keep_keys : ['image', 'label', 'length']
+[2026/05/26 08:07:30] ppocr INFO:     loader : 
+[2026/05/26 08:07:30] ppocr INFO:         batch_size_per_card : 16
+[2026/05/26 08:07:30] ppocr INFO:         drop_last : False
+[2026/05/26 08:07:30] ppocr INFO:         num_workers : 2
+[2026/05/26 08:07:30] ppocr INFO:         shuffle : False
+[2026/05/26 08:07:30] ppocr INFO: Global : 
+[2026/05/26 08:07:30] ppocr INFO:     cal_metric_during_train : True
+[2026/05/26 08:07:30] ppocr INFO:     character_dict_path : /home/ubuntu/ppocrv5_vi_finetune/vietnamese_dict.txt
+[2026/05/26 08:07:30] ppocr INFO:     checkpoints : None
+[2026/05/26 08:07:30] ppocr INFO:     debug : False
+[2026/05/26 08:07:30] ppocr INFO:     distributed : False
+[2026/05/26 08:07:30] ppocr INFO:     epoch_num : 2
+[2026/05/26 08:07:30] ppocr INFO:     eval_batch_step : [0, 8]
+[2026/05/26 08:07:30] ppocr INFO:     infer_img : None
+[2026/05/26 08:07:30] ppocr INFO:     infer_mode : False
+[2026/05/26 08:07:30] ppocr INFO:     log_smooth_window : 20
+[2026/05/26 08:07:30] ppocr INFO:     max_text_length : 50
+[2026/05/26 08:07:30] ppocr INFO:     pretrained_model : None
+[2026/05/26 08:07:30] ppocr INFO:     print_batch_step : 10
+[2026/05/26 08:07:30] ppocr INFO:     save_epoch_step : 10
+[2026/05/26 08:07:30] ppocr INFO:     save_inference_dir : /home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/rec_inference
+[2026/05/26 08:07:30] ppocr INFO:     save_model_dir : /home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/rec_model
+[2026/05/26 08:07:30] ppocr INFO:     use_gpu : False
+[2026/05/26 08:07:30] ppocr INFO:     use_space_char : True
+[2026/05/26 08:07:30] ppocr INFO:     use_visualdl : True
+[2026/05/26 08:07:30] ppocr INFO: Loss : 
+[2026/05/26 08:07:30] ppocr INFO:     loss_config_list : 
+[2026/05/26 08:07:30] ppocr INFO:         CTCLoss : None
+[2026/05/26 08:07:30] ppocr INFO:         SARLoss : None
+[2026/05/26 08:07:30] ppocr INFO:     name : MultiLoss
+[2026/05/26 08:07:30] ppocr INFO: Metric : 
+[2026/05/26 08:07:30] ppocr INFO:     is_filter : True
+[2026/05/26 08:07:30] ppocr INFO:     main_indicator : acc
+[2026/05/26 08:07:30] ppocr INFO:     name : RecMetric
+[2026/05/26 08:07:30] ppocr INFO: Optimizer : 
+[2026/05/26 08:07:30] ppocr INFO:     beta1 : 0.9
+[2026/05/26 08:07:30] ppocr INFO:     beta2 : 0.999
+[2026/05/26 08:07:30] ppocr INFO:     lr : 
+[2026/05/26 08:07:30] ppocr INFO:         learning_rate : 0.0005
+[2026/05/26 08:07:30] ppocr INFO:     name : Adam
+[2026/05/26 08:07:30] ppocr INFO:     regularizer : 
+[2026/05/26 08:07:30] ppocr INFO:         factor : 2e-05
+[2026/05/26 08:07:30] ppocr INFO:         name : L2
+[2026/05/26 08:07:30] ppocr INFO: PostProcess : 
+[2026/05/26 08:07:30] ppocr INFO:     character_dict_path : /home/ubuntu/ppocrv5_vi_finetune/vietnamese_dict.txt
+[2026/05/26 08:07:30] ppocr INFO:     name : CTCLabelDecode
+[2026/05/26 08:07:30] ppocr INFO:     use_space_char : True
+[2026/05/26 08:07:30] ppocr INFO: Train : 
+[2026/05/26 08:07:30] ppocr INFO:     dataset : 
+[2026/05/26 08:07:30] ppocr INFO:         data_dir : ./
+[2026/05/26 08:07:30] ppocr INFO:         label_file_list : ['/home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/data/train.txt']
+[2026/05/26 08:07:30] ppocr INFO:         name : SimpleDataSet
+[2026/05/26 08:07:30] ppocr INFO:         transforms : 
+[2026/05/26 08:07:30] ppocr INFO:             DecodeImage : 
+[2026/05/26 08:07:30] ppocr INFO:                 channel_first : False
+[2026/05/26 08:07:30] ppocr INFO:                 img_mode : BGR
+[2026/05/26 08:07:30] ppocr INFO:             CTCLabelEncode : None
+[2026/05/26 08:07:30] ppocr INFO:             RecResizeImg : 
+[2026/05/26 08:07:30] ppocr INFO:                 image_shape : [3, 48, 320]
+[2026/05/26 08:07:30] ppocr INFO:             KeepKeys : 
+[2026/05/26 08:07:30] ppocr INFO:                 keep_keys : ['image', 'label', 'length']
+[2026/05/26 08:07:30] ppocr INFO:     loader : 
+[2026/05/26 08:07:30] ppocr INFO:         batch_size_per_card : 16
+[2026/05/26 08:07:30] ppocr INFO:         drop_last : True
+[2026/05/26 08:07:30] ppocr INFO:         num_workers : 4
+[2026/05/26 08:07:30] ppocr INFO:         shuffle : True
+[2026/05/26 08:07:30] ppocr INFO: profiler_options : None
+[2026/05/26 08:07:30] ppocr INFO: train with paddle 3.3.1 and device Place(cpu)
+[2026/05/26 08:07:30] ppocr INFO: Initialize indexes of datasets:['/home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/data/train.txt']
+[2026/05/26 08:07:30] ppocr INFO: Initialize indexes of datasets:['/home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/data/val.txt']
+[2026/05/26 08:08:03] ppocr WARNING: You are using VisualDL, the VisualDL is deprecated and removed in ppocr!
+[2026/05/26 08:08:03] ppocr INFO: Architecture : 
+[2026/05/26 08:08:03] ppocr INFO:     Backbone : 
+[2026/05/26 08:08:03] ppocr INFO:         name : PPLCNetV3
+[2026/05/26 08:08:03] ppocr INFO:         scale : 0.5
+[2026/05/26 08:08:03] ppocr INFO:     Head : 
+[2026/05/26 08:08:03] ppocr INFO:         head_list : 
+[2026/05/26 08:08:03] ppocr INFO:             CTCHead : 
+[2026/05/26 08:08:03] ppocr INFO:                 Head : 
+[2026/05/26 08:08:03] ppocr INFO:                     fc_decay : 1e-05
+[2026/05/26 08:08:03] ppocr INFO:                 Neck : 
+[2026/05/26 08:08:03] ppocr INFO:                     depth : 2
+[2026/05/26 08:08:03] ppocr INFO:                     dims : 64
+[2026/05/26 08:08:03] ppocr INFO:                     hidden_dims : 120
+[2026/05/26 08:08:03] ppocr INFO:                     name : svtr
+[2026/05/26 08:08:03] ppocr INFO:                     use_guide : True
+[2026/05/26 08:08:03] ppocr INFO:                 Query : 
+[2026/05/26 08:08:03] ppocr INFO:                     depth : 2
+[2026/05/26 08:08:03] ppocr INFO:                     dims : 64
+[2026/05/26 08:08:03] ppocr INFO:                     hidden_dims : 120
+[2026/05/26 08:08:03] ppocr INFO:                     name : svtr
+[2026/05/26 08:08:03] ppocr INFO:                     use_guide : True
+[2026/05/26 08:08:03] ppocr INFO:             SARHead : 
+[2026/05/26 08:08:03] ppocr INFO:                 enc_dim : 512
+[2026/05/26 08:08:03] ppocr INFO:                 max_text_length : 50
+[2026/05/26 08:08:03] ppocr INFO:         name : MultiHead
+[2026/05/26 08:08:03] ppocr INFO:     Transform : None
+[2026/05/26 08:08:03] ppocr INFO:     algorithm : SVTR_LCNet
+[2026/05/26 08:08:03] ppocr INFO:     model_type : rec
+[2026/05/26 08:08:03] ppocr INFO: Eval : 
+[2026/05/26 08:08:03] ppocr INFO:     dataset : 
+[2026/05/26 08:08:03] ppocr INFO:         data_dir : ./
+[2026/05/26 08:08:03] ppocr INFO:         label_file_list : ['/home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/data/val.txt']
+[2026/05/26 08:08:03] ppocr INFO:         name : SimpleDataSet
+[2026/05/26 08:08:03] ppocr INFO:         transforms : 
+[2026/05/26 08:08:03] ppocr INFO:             DecodeImage : 
+[2026/05/26 08:08:03] ppocr INFO:                 channel_first : False
+[2026/05/26 08:08:03] ppocr INFO:                 img_mode : BGR
+[2026/05/26 08:08:03] ppocr INFO:             CTCLabelEncode : None
+[2026/05/26 08:08:03] ppocr INFO:             RecResizeImg : 
+[2026/05/26 08:08:03] ppocr INFO:                 image_shape : [3, 48, 320]
+[2026/05/26 08:08:03] ppocr INFO:             KeepKeys : 
+[2026/05/26 08:08:03] ppocr INFO:                 keep_keys : ['image', 'label', 'length']
+[2026/05/26 08:08:03] ppocr INFO:     loader : 
+[2026/05/26 08:08:03] ppocr INFO:         batch_size_per_card : 16
+[2026/05/26 08:08:03] ppocr INFO:         drop_last : False
+[2026/05/26 08:08:03] ppocr INFO:         num_workers : 2
+[2026/05/26 08:08:03] ppocr INFO:         shuffle : False
+[2026/05/26 08:08:03] ppocr INFO: Global : 
+[2026/05/26 08:08:03] ppocr INFO:     cal_metric_during_train : True
+[2026/05/26 08:08:03] ppocr INFO:     character_dict_path : /home/ubuntu/ppocrv5_vi_finetune/vietnamese_dict.txt
+[2026/05/26 08:08:03] ppocr INFO:     checkpoints : None
+[2026/05/26 08:08:03] ppocr INFO:     debug : False
+[2026/05/26 08:08:03] ppocr INFO:     distributed : False
+[2026/05/26 08:08:03] ppocr INFO:     epoch_num : 2
+[2026/05/26 08:08:03] ppocr INFO:     eval_batch_step : [0, 8]
+[2026/05/26 08:08:03] ppocr INFO:     infer_img : None
+[2026/05/26 08:08:03] ppocr INFO:     infer_mode : False
+[2026/05/26 08:08:03] ppocr INFO:     log_smooth_window : 20
+[2026/05/26 08:08:03] ppocr INFO:     max_text_length : 50
+[2026/05/26 08:08:03] ppocr INFO:     pretrained_model : None
+[2026/05/26 08:08:03] ppocr INFO:     print_batch_step : 10
+[2026/05/26 08:08:03] ppocr INFO:     save_epoch_step : 10
+[2026/05/26 08:08:03] ppocr INFO:     save_inference_dir : /home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/rec_inference
+[2026/05/26 08:08:03] ppocr INFO:     save_model_dir : /home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/rec_model
+[2026/05/26 08:08:03] ppocr INFO:     use_gpu : False
+[2026/05/26 08:08:03] ppocr INFO:     use_space_char : True
+[2026/05/26 08:08:03] ppocr INFO:     use_visualdl : True
+[2026/05/26 08:08:03] ppocr INFO: Loss : 
+[2026/05/26 08:08:03] ppocr INFO:     loss_config_list : 
+[2026/05/26 08:08:03] ppocr INFO:         CTCLoss : None
+[2026/05/26 08:08:03] ppocr INFO:         SARLoss : None
+[2026/05/26 08:08:03] ppocr INFO:     name : MultiLoss
+[2026/05/26 08:08:03] ppocr INFO: Metric : 
+[2026/05/26 08:08:03] ppocr INFO:     is_filter : True
+[2026/05/26 08:08:03] ppocr INFO:     main_indicator : acc
+[2026/05/26 08:08:03] ppocr INFO:     name : RecMetric
+[2026/05/26 08:08:03] ppocr INFO: Optimizer : 
+[2026/05/26 08:08:03] ppocr INFO:     beta1 : 0.9
+[2026/05/26 08:08:03] ppocr INFO:     beta2 : 0.999
+[2026/05/26 08:08:03] ppocr INFO:     lr : 
+[2026/05/26 08:08:03] ppocr INFO:         learning_rate : 0.0005
+[2026/05/26 08:08:03] ppocr INFO:     name : Adam
+[2026/05/26 08:08:03] ppocr INFO:     regularizer : 
+[2026/05/26 08:08:03] ppocr INFO:         factor : 2e-05
+[2026/05/26 08:08:03] ppocr INFO:         name : L2
+[2026/05/26 08:08:03] ppocr INFO: PostProcess : 
+[2026/05/26 08:08:03] ppocr INFO:     character_dict_path : /home/ubuntu/ppocrv5_vi_finetune/vietnamese_dict.txt
+[2026/05/26 08:08:03] ppocr INFO:     name : CTCLabelDecode
+[2026/05/26 08:08:03] ppocr INFO:     use_space_char : True
+[2026/05/26 08:08:03] ppocr INFO: Train : 
+[2026/05/26 08:08:03] ppocr INFO:     dataset : 
+[2026/05/26 08:08:03] ppocr INFO:         data_dir : ./
+[2026/05/26 08:08:03] ppocr INFO:         label_file_list : ['/home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/data/train.txt']
+[2026/05/26 08:08:03] ppocr INFO:         name : SimpleDataSet
+[2026/05/26 08:08:03] ppocr INFO:         transforms : 
+[2026/05/26 08:08:03] ppocr INFO:             DecodeImage : 
+[2026/05/26 08:08:03] ppocr INFO:                 channel_first : False
+[2026/05/26 08:08:03] ppocr INFO:                 img_mode : BGR
+[2026/05/26 08:08:03] ppocr INFO:             CTCLabelEncode : None
+[2026/05/26 08:08:03] ppocr INFO:             RecResizeImg : 
+[2026/05/26 08:08:03] ppocr INFO:                 image_shape : [3, 48, 320]
+[2026/05/26 08:08:03] ppocr INFO:             KeepKeys : 
+[2026/05/26 08:08:03] ppocr INFO:                 keep_keys : ['image', 'label', 'length']
+[2026/05/26 08:08:03] ppocr INFO:     loader : 
+[2026/05/26 08:08:03] ppocr INFO:         batch_size_per_card : 16
+[2026/05/26 08:08:03] ppocr INFO:         drop_last : True
+[2026/05/26 08:08:03] ppocr INFO:         num_workers : 4
+[2026/05/26 08:08:03] ppocr INFO:         shuffle : True
+[2026/05/26 08:08:03] ppocr INFO: profiler_options : None
+[2026/05/26 08:08:03] ppocr INFO: train with paddle 3.3.1 and device Place(cpu)
+[2026/05/26 08:08:03] ppocr INFO: Initialize indexes of datasets:['/home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/data/train.txt']
+[2026/05/26 08:08:03] ppocr INFO: Initialize indexes of datasets:['/home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/data/val.txt']
+[2026/05/26 08:08:03] ppocr INFO: train dataloader has 4 iters
+[2026/05/26 08:08:03] ppocr INFO: valid dataloader has 1 iters
+[2026/05/26 08:08:03] ppocr INFO: train from scratch
+[2026/05/26 08:08:03] ppocr INFO: During the training process, after the 0th iteration, an evaluation is run every 8 iterations
+[2026/05/26 08:08:45] ppocr WARNING: You are using VisualDL, the VisualDL is deprecated and removed in ppocr!
+[2026/05/26 08:08:45] ppocr INFO: Architecture : 
+[2026/05/26 08:08:45] ppocr INFO:     Backbone : 
+[2026/05/26 08:08:45] ppocr INFO:         name : PPLCNetV3
+[2026/05/26 08:08:45] ppocr INFO:         scale : 0.5
+[2026/05/26 08:08:45] ppocr INFO:     Head : 
+[2026/05/26 08:08:45] ppocr INFO:         head_list : 
+[2026/05/26 08:08:45] ppocr INFO:             CTCHead : 
+[2026/05/26 08:08:45] ppocr INFO:                 Head : 
+[2026/05/26 08:08:45] ppocr INFO:                     fc_decay : 1e-05
+[2026/05/26 08:08:45] ppocr INFO:                 Neck : 
+[2026/05/26 08:08:45] ppocr INFO:                     depth : 2
+[2026/05/26 08:08:45] ppocr INFO:                     dims : 64
+[2026/05/26 08:08:45] ppocr INFO:                     hidden_dims : 120
+[2026/05/26 08:08:45] ppocr INFO:                     name : svtr
+[2026/05/26 08:08:45] ppocr INFO:                     use_guide : True
+[2026/05/26 08:08:45] ppocr INFO:                 Query : 
+[2026/05/26 08:08:45] ppocr INFO:                     depth : 2
+[2026/05/26 08:08:45] ppocr INFO:                     dims : 64
+[2026/05/26 08:08:45] ppocr INFO:                     hidden_dims : 120
+[2026/05/26 08:08:45] ppocr INFO:                     name : svtr
+[2026/05/26 08:08:45] ppocr INFO:                     use_guide : True
+[2026/05/26 08:08:45] ppocr INFO:             SARHead : 
+[2026/05/26 08:08:45] ppocr INFO:                 enc_dim : 512
+[2026/05/26 08:08:45] ppocr INFO:                 max_text_length : 50
+[2026/05/26 08:08:45] ppocr INFO:         name : MultiHead
+[2026/05/26 08:08:45] ppocr INFO:     Transform : None
+[2026/05/26 08:08:45] ppocr INFO:     algorithm : SVTR_LCNet
+[2026/05/26 08:08:45] ppocr INFO:     model_type : rec
+[2026/05/26 08:08:45] ppocr INFO: Eval : 
+[2026/05/26 08:08:45] ppocr INFO:     dataset : 
+[2026/05/26 08:08:45] ppocr INFO:         data_dir : ./
+[2026/05/26 08:08:45] ppocr INFO:         label_file_list : ['/home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/data/val.txt']
+[2026/05/26 08:08:45] ppocr INFO:         name : SimpleDataSet
+[2026/05/26 08:08:45] ppocr INFO:         transforms : 
+[2026/05/26 08:08:45] ppocr INFO:             DecodeImage : 
+[2026/05/26 08:08:45] ppocr INFO:                 channel_first : False
+[2026/05/26 08:08:45] ppocr INFO:                 img_mode : BGR
+[2026/05/26 08:08:45] ppocr INFO:             CTCLabelEncode : None
+[2026/05/26 08:08:45] ppocr INFO:             RecResizeImg : 
+[2026/05/26 08:08:45] ppocr INFO:                 image_shape : [3, 48, 320]
+[2026/05/26 08:08:45] ppocr INFO:             KeepKeys : 
+[2026/05/26 08:08:45] ppocr INFO:                 keep_keys : ['image', 'label', 'length']
+[2026/05/26 08:08:45] ppocr INFO:     loader : 
+[2026/05/26 08:08:45] ppocr INFO:         batch_size_per_card : 4
+[2026/05/26 08:08:45] ppocr INFO:         drop_last : False
+[2026/05/26 08:08:45] ppocr INFO:         num_workers : 0
+[2026/05/26 08:08:45] ppocr INFO:         shuffle : False
+[2026/05/26 08:08:45] ppocr INFO: Global : 
+[2026/05/26 08:08:45] ppocr INFO:     cal_metric_during_train : True
+[2026/05/26 08:08:45] ppocr INFO:     character_dict_path : /home/ubuntu/ppocrv5_vi_finetune/vietnamese_dict.txt
+[2026/05/26 08:08:45] ppocr INFO:     checkpoints : None
+[2026/05/26 08:08:45] ppocr INFO:     debug : False
+[2026/05/26 08:08:45] ppocr INFO:     distributed : False
+[2026/05/26 08:08:45] ppocr INFO:     epoch_num : 1
+[2026/05/26 08:08:45] ppocr INFO:     eval_batch_step : [0, 2]
+[2026/05/26 08:08:45] ppocr INFO:     infer_img : None
+[2026/05/26 08:08:45] ppocr INFO:     infer_mode : False
+[2026/05/26 08:08:45] ppocr INFO:     log_smooth_window : 20
+[2026/05/26 08:08:45] ppocr INFO:     max_text_length : 50
+[2026/05/26 08:08:45] ppocr INFO:     pretrained_model : None
+[2026/05/26 08:08:45] ppocr INFO:     print_batch_step : 10
+[2026/05/26 08:08:45] ppocr INFO:     save_epoch_step : 10
+[2026/05/26 08:08:45] ppocr INFO:     save_inference_dir : /home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/rec_inference
+[2026/05/26 08:08:45] ppocr INFO:     save_model_dir : /home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/rec_model
+[2026/05/26 08:08:45] ppocr INFO:     use_gpu : False
+[2026/05/26 08:08:45] ppocr INFO:     use_space_char : True
+[2026/05/26 08:08:45] ppocr INFO:     use_visualdl : True
+[2026/05/26 08:08:45] ppocr INFO: Loss : 
+[2026/05/26 08:08:45] ppocr INFO:     loss_config_list : 
+[2026/05/26 08:08:45] ppocr INFO:         CTCLoss : None
+[2026/05/26 08:08:45] ppocr INFO:         SARLoss : None
+[2026/05/26 08:08:45] ppocr INFO:     name : MultiLoss
+[2026/05/26 08:08:45] ppocr INFO: Metric : 
+[2026/05/26 08:08:45] ppocr INFO:     is_filter : True
+[2026/05/26 08:08:45] ppocr INFO:     main_indicator : acc
+[2026/05/26 08:08:45] ppocr INFO:     name : RecMetric
+[2026/05/26 08:08:45] ppocr INFO: Optimizer : 
+[2026/05/26 08:08:45] ppocr INFO:     beta1 : 0.9
+[2026/05/26 08:08:45] ppocr INFO:     beta2 : 0.999
+[2026/05/26 08:08:45] ppocr INFO:     lr : 
+[2026/05/26 08:08:45] ppocr INFO:         learning_rate : 0.0005
+[2026/05/26 08:08:45] ppocr INFO:     name : Adam
+[2026/05/26 08:08:45] ppocr INFO:     regularizer : 
+[2026/05/26 08:08:45] ppocr INFO:         factor : 2e-05
+[2026/05/26 08:08:45] ppocr INFO:         name : L2
+[2026/05/26 08:08:45] ppocr INFO: PostProcess : 
+[2026/05/26 08:08:45] ppocr INFO:     character_dict_path : /home/ubuntu/ppocrv5_vi_finetune/vietnamese_dict.txt
+[2026/05/26 08:08:45] ppocr INFO:     name : CTCLabelDecode
+[2026/05/26 08:08:45] ppocr INFO:     use_space_char : True
+[2026/05/26 08:08:45] ppocr INFO: Train : 
+[2026/05/26 08:08:45] ppocr INFO:     dataset : 
+[2026/05/26 08:08:45] ppocr INFO:         data_dir : ./
+[2026/05/26 08:08:45] ppocr INFO:         label_file_list : ['/home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/data/train.txt']
+[2026/05/26 08:08:45] ppocr INFO:         name : SimpleDataSet
+[2026/05/26 08:08:45] ppocr INFO:         transforms : 
+[2026/05/26 08:08:45] ppocr INFO:             DecodeImage : 
+[2026/05/26 08:08:45] ppocr INFO:                 channel_first : False
+[2026/05/26 08:08:45] ppocr INFO:                 img_mode : BGR
+[2026/05/26 08:08:45] ppocr INFO:             CTCLabelEncode : None
+[2026/05/26 08:08:45] ppocr INFO:             RecResizeImg : 
+[2026/05/26 08:08:45] ppocr INFO:                 image_shape : [3, 48, 320]
+[2026/05/26 08:08:45] ppocr INFO:             KeepKeys : 
+[2026/05/26 08:08:45] ppocr INFO:                 keep_keys : ['image', 'label', 'length']
+[2026/05/26 08:08:45] ppocr INFO:     loader : 
+[2026/05/26 08:08:45] ppocr INFO:         batch_size_per_card : 4
+[2026/05/26 08:08:45] ppocr INFO:         drop_last : True
+[2026/05/26 08:08:45] ppocr INFO:         num_workers : 0
+[2026/05/26 08:08:45] ppocr INFO:         shuffle : True
+[2026/05/26 08:08:45] ppocr INFO: profiler_options : None
+[2026/05/26 08:08:45] ppocr INFO: train with paddle 3.3.1 and device Place(cpu)
+[2026/05/26 08:08:45] ppocr INFO: Initialize indexes of datasets:['/home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/data/train.txt']
+[2026/05/26 08:08:45] ppocr INFO: Initialize indexes of datasets:['/home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/data/val.txt']
+[2026/05/26 08:08:45] ppocr INFO: train dataloader has 18 iters
+[2026/05/26 08:08:45] ppocr INFO: valid dataloader has 3 iters
+[2026/05/26 08:08:45] ppocr INFO: train from scratch
+[2026/05/26 08:08:45] ppocr INFO: During the training process, after the 0th iteration, an evaluation is run every 2 iterations
+[2026/05/26 08:10:02] ppocr WARNING: You are using VisualDL, the VisualDL is deprecated and removed in ppocr!
+[2026/05/26 08:10:02] ppocr INFO: Architecture : 
+[2026/05/26 08:10:02] ppocr INFO:     Backbone : 
+[2026/05/26 08:10:02] ppocr INFO:         name : PPLCNetV3
+[2026/05/26 08:10:02] ppocr INFO:         scale : 0.5
+[2026/05/26 08:10:02] ppocr INFO:     Head : 
+[2026/05/26 08:10:02] ppocr INFO:         fc_decay : 1e-05
+[2026/05/26 08:10:02] ppocr INFO:         name : CTCHead
+[2026/05/26 08:10:02] ppocr INFO:     Transform : None
+[2026/05/26 08:10:02] ppocr INFO:     algorithm : SVTR_LCNet
+[2026/05/26 08:10:02] ppocr INFO:     model_type : rec
+[2026/05/26 08:10:02] ppocr INFO: Eval : 
+[2026/05/26 08:10:02] ppocr INFO:     dataset : 
+[2026/05/26 08:10:02] ppocr INFO:         data_dir : ./
+[2026/05/26 08:10:02] ppocr INFO:         label_file_list : ['/home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/data/val.txt']
+[2026/05/26 08:10:02] ppocr INFO:         name : SimpleDataSet
+[2026/05/26 08:10:02] ppocr INFO:         transforms : 
+[2026/05/26 08:10:02] ppocr INFO:             DecodeImage : 
+[2026/05/26 08:10:02] ppocr INFO:                 channel_first : False
+[2026/05/26 08:10:02] ppocr INFO:                 img_mode : BGR
+[2026/05/26 08:10:02] ppocr INFO:             CTCLabelEncode : None
+[2026/05/26 08:10:02] ppocr INFO:             RecResizeImg : 
+[2026/05/26 08:10:02] ppocr INFO:                 image_shape : [3, 48, 320]
+[2026/05/26 08:10:02] ppocr INFO:             KeepKeys : 
+[2026/05/26 08:10:02] ppocr INFO:                 keep_keys : ['image', 'label', 'length']
+[2026/05/26 08:10:02] ppocr INFO:     loader : 
+[2026/05/26 08:10:02] ppocr INFO:         batch_size_per_card : 4
+[2026/05/26 08:10:02] ppocr INFO:         drop_last : False
+[2026/05/26 08:10:02] ppocr INFO:         num_workers : 0
+[2026/05/26 08:10:02] ppocr INFO:         shuffle : False
+[2026/05/26 08:10:02] ppocr INFO: Global : 
+[2026/05/26 08:10:02] ppocr INFO:     cal_metric_during_train : True
+[2026/05/26 08:10:02] ppocr INFO:     character_dict_path : /home/ubuntu/ppocrv5_vi_finetune/vietnamese_dict.txt
+[2026/05/26 08:10:02] ppocr INFO:     checkpoints : None
+[2026/05/26 08:10:02] ppocr INFO:     debug : False
+[2026/05/26 08:10:02] ppocr INFO:     distributed : False
+[2026/05/26 08:10:02] ppocr INFO:     epoch_num : 1
+[2026/05/26 08:10:02] ppocr INFO:     eval_batch_step : [0, 2]
+[2026/05/26 08:10:02] ppocr INFO:     infer_img : None
+[2026/05/26 08:10:02] ppocr INFO:     infer_mode : False
+[2026/05/26 08:10:02] ppocr INFO:     log_smooth_window : 20
+[2026/05/26 08:10:02] ppocr INFO:     max_text_length : 50
+[2026/05/26 08:10:02] ppocr INFO:     pretrained_model : None
+[2026/05/26 08:10:02] ppocr INFO:     print_batch_step : 10
+[2026/05/26 08:10:02] ppocr INFO:     save_epoch_step : 10
+[2026/05/26 08:10:02] ppocr INFO:     save_inference_dir : /home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/rec_inference
+[2026/05/26 08:10:02] ppocr INFO:     save_model_dir : /home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/rec_model
+[2026/05/26 08:10:02] ppocr INFO:     use_gpu : False
+[2026/05/26 08:10:02] ppocr INFO:     use_space_char : True
+[2026/05/26 08:10:02] ppocr INFO:     use_visualdl : True
+[2026/05/26 08:10:02] ppocr INFO: Loss : 
+[2026/05/26 08:10:02] ppocr INFO:     name : CTCLoss
+[2026/05/26 08:10:02] ppocr INFO: Metric : 
+[2026/05/26 08:10:02] ppocr INFO:     is_filter : True
+[2026/05/26 08:10:02] ppocr INFO:     main_indicator : acc
+[2026/05/26 08:10:02] ppocr INFO:     name : RecMetric
+[2026/05/26 08:10:02] ppocr INFO: Optimizer : 
+[2026/05/26 08:10:02] ppocr INFO:     beta1 : 0.9
+[2026/05/26 08:10:02] ppocr INFO:     beta2 : 0.999
+[2026/05/26 08:10:02] ppocr INFO:     lr : 
+[2026/05/26 08:10:02] ppocr INFO:         learning_rate : 0.0005
+[2026/05/26 08:10:02] ppocr INFO:     name : Adam
+[2026/05/26 08:10:02] ppocr INFO:     regularizer : 
+[2026/05/26 08:10:02] ppocr INFO:         factor : 2e-05
+[2026/05/26 08:10:02] ppocr INFO:         name : L2
+[2026/05/26 08:10:02] ppocr INFO: PostProcess : 
+[2026/05/26 08:10:02] ppocr INFO:     character_dict_path : /home/ubuntu/ppocrv5_vi_finetune/vietnamese_dict.txt
+[2026/05/26 08:10:02] ppocr INFO:     name : CTCLabelDecode
+[2026/05/26 08:10:02] ppocr INFO:     use_space_char : True
+[2026/05/26 08:10:02] ppocr INFO: Train : 
+[2026/05/26 08:10:02] ppocr INFO:     dataset : 
+[2026/05/26 08:10:02] ppocr INFO:         data_dir : ./
+[2026/05/26 08:10:02] ppocr INFO:         label_file_list : ['/home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/data/train.txt']
+[2026/05/26 08:10:02] ppocr INFO:         name : SimpleDataSet
+[2026/05/26 08:10:02] ppocr INFO:         transforms : 
+[2026/05/26 08:10:02] ppocr INFO:             DecodeImage : 
+[2026/05/26 08:10:02] ppocr INFO:                 channel_first : False
+[2026/05/26 08:10:02] ppocr INFO:                 img_mode : BGR
+[2026/05/26 08:10:02] ppocr INFO:             CTCLabelEncode : None
+[2026/05/26 08:10:02] ppocr INFO:             RecResizeImg : 
+[2026/05/26 08:10:02] ppocr INFO:                 image_shape : [3, 48, 320]
+[2026/05/26 08:10:02] ppocr INFO:             KeepKeys : 
+[2026/05/26 08:10:02] ppocr INFO:                 keep_keys : ['image', 'label', 'length']
+[2026/05/26 08:10:02] ppocr INFO:     loader : 
+[2026/05/26 08:10:02] ppocr INFO:         batch_size_per_card : 4
+[2026/05/26 08:10:02] ppocr INFO:         drop_last : True
+[2026/05/26 08:10:02] ppocr INFO:         num_workers : 0
+[2026/05/26 08:10:02] ppocr INFO:         shuffle : True
+[2026/05/26 08:10:02] ppocr INFO: profiler_options : None
+[2026/05/26 08:10:02] ppocr INFO: train with paddle 3.3.1 and device Place(cpu)
+[2026/05/26 08:10:02] ppocr INFO: Initialize indexes of datasets:['/home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/data/train.txt']
+[2026/05/26 08:10:02] ppocr INFO: Initialize indexes of datasets:['/home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/data/val.txt']
+[2026/05/26 08:10:02] ppocr INFO: train dataloader has 18 iters
+[2026/05/26 08:10:02] ppocr INFO: valid dataloader has 3 iters
+[2026/05/26 08:10:02] ppocr INFO: train from scratch
+[2026/05/26 08:10:02] ppocr INFO: During the training process, after the 0th iteration, an evaluation is run every 2 iterations
+[2026/05/26 08:10:29] ppocr WARNING: You are using VisualDL, the VisualDL is deprecated and removed in ppocr!
+[2026/05/26 08:10:29] ppocr INFO: Architecture : 
+[2026/05/26 08:10:29] ppocr INFO:     Backbone : 
+[2026/05/26 08:10:29] ppocr INFO:         name : PPLCNetV3
+[2026/05/26 08:10:29] ppocr INFO:         scale : 0.5
+[2026/05/26 08:10:29] ppocr INFO:     Head : 
+[2026/05/26 08:10:29] ppocr INFO:         fc_decay : 1e-05
+[2026/05/26 08:10:29] ppocr INFO:         name : CTCHead
+[2026/05/26 08:10:29] ppocr INFO:     Neck : 
+[2026/05/26 08:10:29] ppocr INFO:         depth : 2
+[2026/05/26 08:10:29] ppocr INFO:         dims : 64
+[2026/05/26 08:10:29] ppocr INFO:         hidden_dims : 120
+[2026/05/26 08:10:29] ppocr INFO:         name : svtr
+[2026/05/26 08:10:29] ppocr INFO:         use_guide : True
+[2026/05/26 08:10:29] ppocr INFO:     Transform : None
+[2026/05/26 08:10:29] ppocr INFO:     algorithm : SVTR_LCNet
+[2026/05/26 08:10:29] ppocr INFO:     model_type : rec
+[2026/05/26 08:10:29] ppocr INFO: Eval : 
+[2026/05/26 08:10:29] ppocr INFO:     dataset : 
+[2026/05/26 08:10:29] ppocr INFO:         data_dir : ./
+[2026/05/26 08:10:29] ppocr INFO:         label_file_list : ['/home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/data/val.txt']
+[2026/05/26 08:10:29] ppocr INFO:         name : SimpleDataSet
+[2026/05/26 08:10:29] ppocr INFO:         transforms : 
+[2026/05/26 08:10:29] ppocr INFO:             DecodeImage : 
+[2026/05/26 08:10:29] ppocr INFO:                 channel_first : False
+[2026/05/26 08:10:29] ppocr INFO:                 img_mode : BGR
+[2026/05/26 08:10:29] ppocr INFO:             CTCLabelEncode : None
+[2026/05/26 08:10:29] ppocr INFO:             RecResizeImg : 
+[2026/05/26 08:10:29] ppocr INFO:                 image_shape : [3, 48, 320]
+[2026/05/26 08:10:29] ppocr INFO:             KeepKeys : 
+[2026/05/26 08:10:29] ppocr INFO:                 keep_keys : ['image', 'label', 'length']
+[2026/05/26 08:10:29] ppocr INFO:     loader : 
+[2026/05/26 08:10:29] ppocr INFO:         batch_size_per_card : 4
+[2026/05/26 08:10:29] ppocr INFO:         drop_last : False
+[2026/05/26 08:10:29] ppocr INFO:         num_workers : 0
+[2026/05/26 08:10:29] ppocr INFO:         shuffle : False
+[2026/05/26 08:10:29] ppocr INFO: Global : 
+[2026/05/26 08:10:29] ppocr INFO:     cal_metric_during_train : True
+[2026/05/26 08:10:29] ppocr INFO:     character_dict_path : /home/ubuntu/ppocrv5_vi_finetune/vietnamese_dict.txt
+[2026/05/26 08:10:29] ppocr INFO:     checkpoints : None
+[2026/05/26 08:10:29] ppocr INFO:     debug : False
+[2026/05/26 08:10:29] ppocr INFO:     distributed : False
+[2026/05/26 08:10:29] ppocr INFO:     epoch_num : 1
+[2026/05/26 08:10:29] ppocr INFO:     eval_batch_step : [0, 2]
+[2026/05/26 08:10:29] ppocr INFO:     infer_img : None
+[2026/05/26 08:10:29] ppocr INFO:     infer_mode : False
+[2026/05/26 08:10:29] ppocr INFO:     log_smooth_window : 20
+[2026/05/26 08:10:29] ppocr INFO:     max_text_length : 50
+[2026/05/26 08:10:29] ppocr INFO:     pretrained_model : None
+[2026/05/26 08:10:29] ppocr INFO:     print_batch_step : 10
+[2026/05/26 08:10:29] ppocr INFO:     save_epoch_step : 10
+[2026/05/26 08:10:29] ppocr INFO:     save_inference_dir : /home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/rec_inference
+[2026/05/26 08:10:29] ppocr INFO:     save_model_dir : /home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/rec_model
+[2026/05/26 08:10:29] ppocr INFO:     use_gpu : False
+[2026/05/26 08:10:29] ppocr INFO:     use_space_char : True
+[2026/05/26 08:10:29] ppocr INFO:     use_visualdl : True
+[2026/05/26 08:10:29] ppocr INFO: Loss : 
+[2026/05/26 08:10:29] ppocr INFO:     name : CTCLoss
+[2026/05/26 08:10:29] ppocr INFO: Metric : 
+[2026/05/26 08:10:29] ppocr INFO:     is_filter : True
+[2026/05/26 08:10:29] ppocr INFO:     main_indicator : acc
+[2026/05/26 08:10:29] ppocr INFO:     name : RecMetric
+[2026/05/26 08:10:29] ppocr INFO: Optimizer : 
+[2026/05/26 08:10:29] ppocr INFO:     beta1 : 0.9
+[2026/05/26 08:10:29] ppocr INFO:     beta2 : 0.999
+[2026/05/26 08:10:29] ppocr INFO:     lr : 
+[2026/05/26 08:10:29] ppocr INFO:         learning_rate : 0.0005
+[2026/05/26 08:10:29] ppocr INFO:     name : Adam
+[2026/05/26 08:10:29] ppocr INFO:     regularizer : 
+[2026/05/26 08:10:29] ppocr INFO:         factor : 2e-05
+[2026/05/26 08:10:29] ppocr INFO:         name : L2
+[2026/05/26 08:10:29] ppocr INFO: PostProcess : 
+[2026/05/26 08:10:29] ppocr INFO:     character_dict_path : /home/ubuntu/ppocrv5_vi_finetune/vietnamese_dict.txt
+[2026/05/26 08:10:29] ppocr INFO:     name : CTCLabelDecode
+[2026/05/26 08:10:29] ppocr INFO:     use_space_char : True
+[2026/05/26 08:10:29] ppocr INFO: Train : 
+[2026/05/26 08:10:29] ppocr INFO:     dataset : 
+[2026/05/26 08:10:29] ppocr INFO:         data_dir : ./
+[2026/05/26 08:10:29] ppocr INFO:         label_file_list : ['/home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/data/train.txt']
+[2026/05/26 08:10:29] ppocr INFO:         name : SimpleDataSet
+[2026/05/26 08:10:29] ppocr INFO:         transforms : 
+[2026/05/26 08:10:29] ppocr INFO:             DecodeImage : 
+[2026/05/26 08:10:29] ppocr INFO:                 channel_first : False
+[2026/05/26 08:10:29] ppocr INFO:                 img_mode : BGR
+[2026/05/26 08:10:29] ppocr INFO:             CTCLabelEncode : None
+[2026/05/26 08:10:29] ppocr INFO:             RecResizeImg : 
+[2026/05/26 08:10:29] ppocr INFO:                 image_shape : [3, 48, 320]
+[2026/05/26 08:10:29] ppocr INFO:             KeepKeys : 
+[2026/05/26 08:10:29] ppocr INFO:                 keep_keys : ['image', 'label', 'length']
+[2026/05/26 08:10:29] ppocr INFO:     loader : 
+[2026/05/26 08:10:29] ppocr INFO:         batch_size_per_card : 4
+[2026/05/26 08:10:29] ppocr INFO:         drop_last : True
+[2026/05/26 08:10:29] ppocr INFO:         num_workers : 0
+[2026/05/26 08:10:29] ppocr INFO:         shuffle : True
+[2026/05/26 08:10:29] ppocr INFO: profiler_options : None
+[2026/05/26 08:10:29] ppocr INFO: train with paddle 3.3.1 and device Place(cpu)
+[2026/05/26 08:10:29] ppocr INFO: Initialize indexes of datasets:['/home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/data/train.txt']
+[2026/05/26 08:10:29] ppocr INFO: Initialize indexes of datasets:['/home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/data/val.txt']
+[2026/05/26 08:10:53] ppocr WARNING: You are using VisualDL, the VisualDL is deprecated and removed in ppocr!
+[2026/05/26 08:10:53] ppocr INFO: Architecture : 
+[2026/05/26 08:10:53] ppocr INFO:     Backbone : 
+[2026/05/26 08:10:53] ppocr INFO:         name : PPLCNetV3
+[2026/05/26 08:10:53] ppocr INFO:         scale : 0.5
+[2026/05/26 08:10:53] ppocr INFO:     Head : 
+[2026/05/26 08:10:53] ppocr INFO:         fc_decay : 1e-05
+[2026/05/26 08:10:53] ppocr INFO:         name : CTCHead
+[2026/05/26 08:10:53] ppocr INFO:     Neck : 
+[2026/05/26 08:10:53] ppocr INFO:         depth : 2
+[2026/05/26 08:10:53] ppocr INFO:         dims : 64
+[2026/05/26 08:10:53] ppocr INFO:         encoder_type : svtr
+[2026/05/26 08:10:53] ppocr INFO:         hidden_dims : 120
+[2026/05/26 08:10:53] ppocr INFO:         name : SequenceEncoder
+[2026/05/26 08:10:53] ppocr INFO:         use_guide : True
+[2026/05/26 08:10:53] ppocr INFO:     Transform : None
+[2026/05/26 08:10:53] ppocr INFO:     algorithm : SVTR_LCNet
+[2026/05/26 08:10:53] ppocr INFO:     model_type : rec
+[2026/05/26 08:10:53] ppocr INFO: Eval : 
+[2026/05/26 08:10:53] ppocr INFO:     dataset : 
+[2026/05/26 08:10:53] ppocr INFO:         data_dir : ./
+[2026/05/26 08:10:53] ppocr INFO:         label_file_list : ['/home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/data/val.txt']
+[2026/05/26 08:10:53] ppocr INFO:         name : SimpleDataSet
+[2026/05/26 08:10:53] ppocr INFO:         transforms : 
+[2026/05/26 08:10:53] ppocr INFO:             DecodeImage : 
+[2026/05/26 08:10:53] ppocr INFO:                 channel_first : False
+[2026/05/26 08:10:53] ppocr INFO:                 img_mode : BGR
+[2026/05/26 08:10:53] ppocr INFO:             CTCLabelEncode : None
+[2026/05/26 08:10:53] ppocr INFO:             RecResizeImg : 
+[2026/05/26 08:10:53] ppocr INFO:                 image_shape : [3, 48, 320]
+[2026/05/26 08:10:53] ppocr INFO:             KeepKeys : 
+[2026/05/26 08:10:53] ppocr INFO:                 keep_keys : ['image', 'label', 'length']
+[2026/05/26 08:10:53] ppocr INFO:     loader : 
+[2026/05/26 08:10:53] ppocr INFO:         batch_size_per_card : 4
+[2026/05/26 08:10:53] ppocr INFO:         drop_last : False
+[2026/05/26 08:10:53] ppocr INFO:         num_workers : 0
+[2026/05/26 08:10:53] ppocr INFO:         shuffle : False
+[2026/05/26 08:10:53] ppocr INFO: Global : 
+[2026/05/26 08:10:53] ppocr INFO:     cal_metric_during_train : True
+[2026/05/26 08:10:53] ppocr INFO:     character_dict_path : /home/ubuntu/ppocrv5_vi_finetune/vietnamese_dict.txt
+[2026/05/26 08:10:53] ppocr INFO:     checkpoints : None
+[2026/05/26 08:10:53] ppocr INFO:     debug : False
+[2026/05/26 08:10:53] ppocr INFO:     distributed : False
+[2026/05/26 08:10:53] ppocr INFO:     epoch_num : 1
+[2026/05/26 08:10:53] ppocr INFO:     eval_batch_step : [0, 2]
+[2026/05/26 08:10:53] ppocr INFO:     infer_img : None
+[2026/05/26 08:10:53] ppocr INFO:     infer_mode : False
+[2026/05/26 08:10:53] ppocr INFO:     log_smooth_window : 20
+[2026/05/26 08:10:53] ppocr INFO:     max_text_length : 50
+[2026/05/26 08:10:53] ppocr INFO:     pretrained_model : None
+[2026/05/26 08:10:53] ppocr INFO:     print_batch_step : 10
+[2026/05/26 08:10:53] ppocr INFO:     save_epoch_step : 10
+[2026/05/26 08:10:53] ppocr INFO:     save_inference_dir : /home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/rec_inference
+[2026/05/26 08:10:53] ppocr INFO:     save_model_dir : /home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/rec_model
+[2026/05/26 08:10:53] ppocr INFO:     use_gpu : False
+[2026/05/26 08:10:53] ppocr INFO:     use_space_char : True
+[2026/05/26 08:10:53] ppocr INFO:     use_visualdl : True
+[2026/05/26 08:10:53] ppocr INFO: Loss : 
+[2026/05/26 08:10:53] ppocr INFO:     name : CTCLoss
+[2026/05/26 08:10:53] ppocr INFO: Metric : 
+[2026/05/26 08:10:53] ppocr INFO:     is_filter : True
+[2026/05/26 08:10:53] ppocr INFO:     main_indicator : acc
+[2026/05/26 08:10:53] ppocr INFO:     name : RecMetric
+[2026/05/26 08:10:53] ppocr INFO: Optimizer : 
+[2026/05/26 08:10:53] ppocr INFO:     beta1 : 0.9
+[2026/05/26 08:10:53] ppocr INFO:     beta2 : 0.999
+[2026/05/26 08:10:53] ppocr INFO:     lr : 
+[2026/05/26 08:10:53] ppocr INFO:         learning_rate : 0.0005
+[2026/05/26 08:10:53] ppocr INFO:     name : Adam
+[2026/05/26 08:10:53] ppocr INFO:     regularizer : 
+[2026/05/26 08:10:53] ppocr INFO:         factor : 2e-05
+[2026/05/26 08:10:53] ppocr INFO:         name : L2
+[2026/05/26 08:10:53] ppocr INFO: PostProcess : 
+[2026/05/26 08:10:53] ppocr INFO:     character_dict_path : /home/ubuntu/ppocrv5_vi_finetune/vietnamese_dict.txt
+[2026/05/26 08:10:53] ppocr INFO:     name : CTCLabelDecode
+[2026/05/26 08:10:53] ppocr INFO:     use_space_char : True
+[2026/05/26 08:10:53] ppocr INFO: Train : 
+[2026/05/26 08:10:53] ppocr INFO:     dataset : 
+[2026/05/26 08:10:53] ppocr INFO:         data_dir : ./
+[2026/05/26 08:10:53] ppocr INFO:         label_file_list : ['/home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/data/train.txt']
+[2026/05/26 08:10:53] ppocr INFO:         name : SimpleDataSet
+[2026/05/26 08:10:53] ppocr INFO:         transforms : 
+[2026/05/26 08:10:53] ppocr INFO:             DecodeImage : 
+[2026/05/26 08:10:53] ppocr INFO:                 channel_first : False
+[2026/05/26 08:10:53] ppocr INFO:                 img_mode : BGR
+[2026/05/26 08:10:53] ppocr INFO:             CTCLabelEncode : None
+[2026/05/26 08:10:53] ppocr INFO:             RecResizeImg : 
+[2026/05/26 08:10:53] ppocr INFO:                 image_shape : [3, 48, 320]
+[2026/05/26 08:10:53] ppocr INFO:             KeepKeys : 
+[2026/05/26 08:10:53] ppocr INFO:                 keep_keys : ['image', 'label', 'length']
+[2026/05/26 08:10:53] ppocr INFO:     loader : 
+[2026/05/26 08:10:53] ppocr INFO:         batch_size_per_card : 4
+[2026/05/26 08:10:53] ppocr INFO:         drop_last : True
+[2026/05/26 08:10:53] ppocr INFO:         num_workers : 0
+[2026/05/26 08:10:53] ppocr INFO:         shuffle : True
+[2026/05/26 08:10:53] ppocr INFO: profiler_options : None
+[2026/05/26 08:10:53] ppocr INFO: train with paddle 3.3.1 and device Place(cpu)
+[2026/05/26 08:10:53] ppocr INFO: Initialize indexes of datasets:['/home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/data/train.txt']
+[2026/05/26 08:10:53] ppocr INFO: Initialize indexes of datasets:['/home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/data/val.txt']
+[2026/05/26 08:10:54] ppocr INFO: train dataloader has 18 iters
+[2026/05/26 08:10:54] ppocr INFO: valid dataloader has 3 iters
+[2026/05/26 08:10:54] ppocr INFO: train from scratch
+[2026/05/26 08:10:54] ppocr INFO: During the training process, after the 0th iteration, an evaluation is run every 2 iterations
+[2026/05/26 08:10:59] ppocr INFO: cur metric, acc: 0.0, norm_edit_dis: 1.1111098765503868e-06, fps: 4.4960841666553515
+[2026/05/26 08:10:59] ppocr INFO: save best model is to /home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/rec_model/best_accuracy
+[2026/05/26 08:10:59] ppocr INFO: best metric, acc: 0.0, is_float16: False, norm_edit_dis: 1.1111098765503868e-06, fps: 4.4960841666553515, best_epoch: 1
+[2026/05/26 08:11:04] ppocr INFO: cur metric, acc: 0.0, norm_edit_dis: 1.1111098765503868e-06, fps: 4.460107053242701
+[2026/05/26 08:11:04] ppocr INFO: save best model is to /home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/rec_model/best_accuracy
+[2026/05/26 08:11:04] ppocr INFO: best metric, acc: 0.0, is_float16: False, norm_edit_dis: 1.1111098765503868e-06, fps: 4.460107053242701, best_epoch: 1
+[2026/05/26 08:11:08] ppocr INFO: cur metric, acc: 0.0, norm_edit_dis: 0.05555660493710557, fps: 4.3753826124934045
+[2026/05/26 08:11:08] ppocr INFO: save best model is to /home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/rec_model/best_accuracy
+[2026/05/26 08:11:08] ppocr INFO: best metric, acc: 0.0, is_float16: False, norm_edit_dis: 0.05555660493710557, fps: 4.3753826124934045, best_epoch: 1
+[2026/05/26 08:11:12] ppocr INFO: cur metric, acc: 0.0, norm_edit_dis: 0.07407510287951524, fps: 4.600514616781362
+[2026/05/26 08:11:12] ppocr INFO: save best model is to /home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/rec_model/best_accuracy
+[2026/05/26 08:11:12] ppocr INFO: best metric, acc: 0.0, is_float16: False, norm_edit_dis: 0.07407510287951524, fps: 4.600514616781362, best_epoch: 1
+[2026/05/26 08:11:15] ppocr INFO: epoch: [1/1], global_step: 10, lr: 0.000500, acc: 0.000000, norm_edit_dis: 0.061609, loss: 199.662575, avg_reader_cost: 0.00352 s, avg_batch_cost: 1.26326 s, avg_samples: 4.0, ips: 3.16641 samples/s, eta: 0:00:10
+[2026/05/26 08:11:17] ppocr INFO: cur metric, acc: 0.0, norm_edit_dis: 0.07407510287951546, fps: 4.505776300231539
+[2026/05/26 08:11:17] ppocr INFO: save best model is to /home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/rec_model/best_accuracy
+[2026/05/26 08:11:17] ppocr INFO: best metric, acc: 0.0, is_float16: False, norm_edit_dis: 0.07407510287951546, fps: 4.505776300231539, best_epoch: 1
+[2026/05/26 08:11:21] ppocr INFO: cur metric, acc: 0.0, norm_edit_dis: 0.09259360082192503, fps: 4.62821056844053
+[2026/05/26 08:11:21] ppocr INFO: save best model is to /home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/rec_model/best_accuracy
+[2026/05/26 08:11:21] ppocr INFO: best metric, acc: 0.0, is_float16: False, norm_edit_dis: 0.09259360082192503, fps: 4.62821056844053, best_epoch: 1
+[2026/05/26 08:11:26] ppocr INFO: cur metric, acc: 0.0, norm_edit_dis: 0.1111120987643347, fps: 4.357738563872156
+[2026/05/26 08:11:26] ppocr INFO: save best model is to /home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/rec_model/best_accuracy
+[2026/05/26 08:11:26] ppocr INFO: best metric, acc: 0.0, is_float16: False, norm_edit_dis: 0.1111120987643347, fps: 4.357738563872156, best_epoch: 1
+[2026/05/26 08:11:30] ppocr INFO: cur metric, acc: 0.0, norm_edit_dis: 0.07407510287951546, fps: 4.481320636584899
+[2026/05/26 08:11:30] ppocr INFO: save best model is to /home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/rec_model/best_accuracy
+[2026/05/26 08:11:30] ppocr INFO: best metric, acc: 0.0, is_float16: False, norm_edit_dis: 0.07407510287951546, fps: 4.481320636584899, best_epoch: 1
+[2026/05/26 08:11:32] ppocr INFO: epoch: [1/1], global_step: 18, lr: 0.000500, acc: 0.000000, norm_edit_dis: 0.065859, loss: 191.235947, avg_reader_cost: 0.00245 s, avg_batch_cost: 0.89892 s, avg_samples: 3.2, ips: 3.55982 samples/s, eta: 0:00:00
+[2026/05/26 08:11:34] ppocr INFO: cur metric, acc: 0.0, norm_edit_dis: 0.07407510287951546, fps: 4.891956835296877
+[2026/05/26 08:11:34] ppocr INFO: save best model is to /home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/rec_model/best_accuracy
+[2026/05/26 08:11:34] ppocr INFO: best metric, acc: 0.0, is_float16: False, norm_edit_dis: 0.07407510287951546, fps: 4.891956835296877, best_epoch: 1
+[2026/05/26 08:11:34] ppocr INFO: save model in /home/ubuntu/ppocrv5_vi_finetune/finetuned_models/rec/rec_model/latest
+[2026/05/26 08:11:34] ppocr INFO: best metric, acc: 0.0, is_float16: False, norm_edit_dis: 0.07407510287951546, fps: 4.891956835296877, best_epoch: 1

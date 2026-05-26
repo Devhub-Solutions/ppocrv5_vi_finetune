@@ -53,7 +53,7 @@ VIETNAMESE_DICT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "viet
 
 # Training defaults
 DEFAULT_EPOCHS = 100
-DEFAULT_BATCH_SIZE = 16
+DEFAULT_BATCH_SIZE = 4
 DEFAULT_LR = 0.0005
 DEFAULT_TRAIN_RATIO = 0.9
 
@@ -209,11 +209,18 @@ Architecture:
   algorithm: SVTR_LCNet
   Transform: null
   Backbone:
-    name: PPLCNetV2
+    name: PPLCNetV3
     scale: 0.5
+  Neck:
+    name: SequenceEncoder
+    encoder_type: svtr
+    dims: 64
+    depth: 2
+    hidden_dims: 120
+    use_guide: True
   Head:
     name: CTCHead
-    fc_decay: 2.0e-05
+    fc_decay: 0.00001
 
 Loss:
   name: CTCLoss
@@ -221,6 +228,7 @@ Loss:
 PostProcess:
   name: CTCLabelDecode
   character_dict_path: {os.path.abspath(dict_path)}
+  use_space_char: true
 
 Metric:
   name: RecMetric
@@ -249,7 +257,7 @@ Train:
     shuffle: true
     batch_size_per_card: {batch_size}
     drop_last: true
-    num_workers: 4
+    num_workers: 0
 
 Eval:
   dataset:
@@ -273,7 +281,7 @@ Eval:
     shuffle: false
     drop_last: false
     batch_size_per_card: {batch_size}
-    num_workers: 2
+    num_workers: 0
 """
 
     config_file = os.path.join(config_dir, "rec_vi_config.yml")
