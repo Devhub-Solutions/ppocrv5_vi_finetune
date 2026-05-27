@@ -113,16 +113,18 @@ def prepare_training_data(train_dir: str, output_dir: str, train_ratio: float = 
     train_file = os.path.join(data_dir, "train.txt")
     val_file = os.path.join(data_dir, "val.txt")
 
-    # Sử dụng đường dẫn tương đối để linh hoạt giữa các môi trường
-    # Trong PaddleOCR, data_dir + label_file_list[i] line path = absolute path
-    # Chúng ta sẽ lưu path tương đối so với train_dir
+    # Sử dụng đường dẫn tuyệt đối để đảm bảo PaddleOCR tìm thấy ảnh trong mọi môi trường
     with open(train_file, "w", encoding="utf-8") as f:
         for line in train_lines:
-            f.write(f"{line}\n")
+            parts = line.split("\t")
+            abs_img_path = os.path.abspath(os.path.join(train_dir, parts[0]))
+            f.write(f"{abs_img_path}\t{parts[1]}\n")
 
     with open(val_file, "w", encoding="utf-8") as f:
         for line in val_lines:
-            f.write(f"{line}\n")
+            parts = line.split("\t")
+            abs_img_path = os.path.abspath(os.path.join(train_dir, parts[0]))
+            f.write(f"{abs_img_path}\t{parts[1]}\n")
 
     print(f"Dữ liệu training: {len(train_lines)} mẫu train, {len(val_lines)} mẫu val")
 
@@ -176,13 +178,24 @@ def generate_rec_config(
     rel_val_file = os.path.relpath(val_file, os.getcwd())
     rel_output_dir = os.path.relpath(output_dir, os.getcwd())
 
+    # Trong Kaggle, chúng ta sẽ sử dụng đường dẫn tuyệt đối để tránh nhầm lẫn
+    # Nhưng script vẫn hỗ trợ các môi trường khác bằng cách lấy đường dẫn hiện tại
+    cwd = os.getcwd()
+    abs_dict_path = os.path.abspath(dict_path)
+    abs_train_file = os.path.abspath(train_file)
+    abs_val_file = os.path.abspath(val_file)
+    abs_output_dir = os.path.abspath(output_dir)
+    # data_dir cho SimpleDataSet nên là thư mục chứa ảnh
+    # Trong trường hợp này là thư mục gốc của dự án
+    abs_data_dir = cwd
+
     config_content = f"""Global:
   debug: false
   use_gpu: {'false' if use_cpu else 'true'}
   epoch_num: {epochs}
   log_smooth_window: 20
   print_batch_step: 10
-  save_model_dir: {rel_output_dir}/rec_model
+  save_model_dir: {abs_output_dir}/rec_model
   save_epoch_step: 10
   eval_batch_step:
   - 0
@@ -190,10 +203,10 @@ def generate_rec_config(
   cal_metric_during_train: true
   pretrained_model: {'null' if not pretrain_path else pretrain_path}
   checkpoints: null
-  save_inference_dir: {rel_output_dir}/rec_inference
+  save_inference_dir: {abs_output_dir}/rec_inference
   use_visualdl: true
   infer_img: null
-  character_dict_path: {rel_dict_path}
+  character_dict_path: {abs_dict_path}
   max_text_length: 50
   infer_mode: false
   use_space_char: true
@@ -231,7 +244,7 @@ Loss:
 
 PostProcess:
   name: CTCLabelDecode
-  character_dict_path: {rel_dict_path}
+  character_dict_path: {abs_dict_path}
   use_space_char: true
 
 Metric:
@@ -242,9 +255,9 @@ Metric:
 Train:
   dataset:
     name: SimpleDataSet
-    data_dir: {os.path.relpath(os.path.dirname(train_file), os.getcwd())}/../../
+    data_dir: {abs_data_dir}
     label_file_list:
-    - {rel_train_file}
+    - {abs_train_file}
     transforms:
     - DecodeImage:
         img_mode: BGR
@@ -266,9 +279,9 @@ Train:
 Eval:
   dataset:
     name: SimpleDataSet
-    data_dir: {os.path.relpath(os.path.dirname(val_file), os.getcwd())}/../../
+    data_dir: {abs_data_dir}
     label_file_list:
-    - {rel_val_file}
+    - {abs_val_file}
     transforms:
     - DecodeImage:
         img_mode: BGR
