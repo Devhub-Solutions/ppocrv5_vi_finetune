@@ -53,9 +53,10 @@ VIETNAMESE_DICT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "viet
 
 # Training defaults
 DEFAULT_EPOCHS = 100
-DEFAULT_BATCH_SIZE = 4
+DEFAULT_BATCH_SIZE = 64
 DEFAULT_LR = 0.0005
 DEFAULT_TRAIN_RATIO = 0.9
+DEFAULT_NUM_WORKERS = 4
 
 
 # ============================================================
@@ -146,6 +147,7 @@ def generate_rec_config(
     use_cpu: bool = False,
     pretrained_model: str = None,
     image_shape: str = "3,48,320",
+    num_workers: int = 4,
 ):
     """Tạo file config YAML cho PaddleOCR recognition training."""
 
@@ -274,7 +276,7 @@ Train:
     shuffle: true
     batch_size_per_card: {batch_size}
     drop_last: true
-    num_workers: 0
+    num_workers: {num_workers}
 
 Eval:
   dataset:
@@ -298,7 +300,7 @@ Eval:
     shuffle: false
     drop_last: false
     batch_size_per_card: {batch_size}
-    num_workers: 0
+    num_workers: {num_workers}
 """
 
     config_file = os.path.join(config_dir, "rec_vi_config.yml")
@@ -540,6 +542,13 @@ Ví dụ:
         help="Chỉ chuẩn bị data + config, không chạy training",
     )
 
+    parser.add_argument(
+        "--num_workers",
+        type=int,
+        default=DEFAULT_NUM_WORKERS,
+        help=f"Số worker tải dữ liệu (mặc định: {DEFAULT_NUM_WORKERS})",
+    )
+
     args = parser.parse_args()
 
     # Bước 1: Chuẩn bị data
@@ -561,6 +570,7 @@ Ví dụ:
         use_cpu=args.use_cpu,
         pretrained_model=args.pretrained,
         image_shape=args.image_shape,
+        num_workers=args.num_workers
     )
 
     if args.prepare_only:
