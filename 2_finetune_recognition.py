@@ -313,15 +313,18 @@ def run_training(config_file: str, use_cpu: bool = False):
 
     # Phương pháp 1: Gọi qua PaddleOCR's tools
     # Kiểm tra xem paddleocr có tools train không
-    paddleocr_path = os.path.dirname(
-        __import__("paddleocr").__file__
-    )
-
-    # Tìm train.py trong PaddleOCR
-    possible_train_scripts = [
-        os.path.join(paddleocr_path, "..", "tools", "train.py"),
-        os.path.join(paddleocr_path, "tools", "train.py"),
-    ]
+    try:
+        import paddleocr
+        paddleocr_path = os.path.dirname(paddleocr.__file__)
+        # Tìm train.py trong PaddleOCR
+        possible_train_scripts = [
+            os.path.join(paddleocr_path, "..", "tools", "train.py"),
+            os.path.join(paddleocr_path, "tools", "train.py"),
+        ]
+    except (ImportError, AttributeError):
+        print("Không thể import paddleocr trực tiếp để tìm tools.")
+        paddleocr_path = None
+        possible_train_scripts = []
 
     train_script = None
     for p in possible_train_scripts:
